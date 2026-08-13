@@ -1,0 +1,229 @@
+/* ====================================================================
+   GLOBAL THEME & ACCENT SYSTEM - SINGLE SOURCE OF TRUTH DESIGN TOKENS
+   ==================================================================== */
+
+:root {
+    /* Dynamic Accent Color Tokens (Default: Spotify Green #1DB954) */
+    --accent: #1DB954;
+    --accent-hover: #1ED760;
+    --accent-rgb: 29, 185, 84;
+    --accent-text: #000000;
+
+    /* Light Mode Color Palette (Neutral Off-White) */
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-nav: rgba(248, 250, 252, 0.95);
+    --bg-header: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(0, 0, 0, 0.12);
+    --border-hover: rgba(var(--accent-rgb), 0.5);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 8px 24px rgba(var(--accent-rgb), 0.2);
+    --player-bottom-bg: #ffffff;
+    --dropdown-bg: #ffffff;
+    --dropdown-text: #0f172a;
+    --dropdown-border: rgba(0, 0, 0, 0.15);
+    --dropdown-hover: #f1f5f9;
+    --game-tile-bg: #e2e8f0;
+}
+
+.dark {
+    /* Dark Mode Color Palette (Spotify Charcoal Aesthetic) */
+    --bg-body: #121212;
+    --bg-card: #181818;
+    --bg-card-hover: #282828;
+    --bg-nav: rgba(18, 18, 18, 0.95);
+    --bg-header: rgba(7, 7, 7, 0.95);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(var(--accent-rgb), 0.6);
+    --text-main: #ffffff;
+    --text-muted: #a7a7a7;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 8px 24px rgba(var(--accent-rgb), 0.35);
+    --player-bottom-bg: #121212;
+    --dropdown-bg: #181818;
+    --dropdown-text: #ffffff;
+    --dropdown-border: rgba(255, 255, 255, 0.15);
+    --dropdown-hover: rgba(var(--accent-rgb), 0.2);
+    --game-tile-bg: #282828;
+}
+
+/* Base Document Styles */
+html, body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Montserrat", "Plus Jakarta Sans", sans-serif;
+    min-height: 100vh;
+}
+
+/* Background Pattern & Ambient Glow */
+.deco-bg-pattern {
+    background-color: var(--bg-body);
+    background-image: radial-gradient(circle at 50% 0%, rgba(var(--accent-rgb), 0.15), transparent 70%);
+    background-attachment: fixed;
+}
+
+/* UI Utility Classes */
+.bg-theme-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.border-theme {
+    border-color: var(--border-color);
+}
+
+.text-theme-main {
+    color: var(--text-main);
+}
+
+.text-theme-muted {
+    color: var(--text-muted);
+}
+
+.bg-theme-nav {
+    background-color: var(--bg-nav);
+}
+
+.bg-theme-header {
+    background-color: var(--bg-header);
+}
+
+/* Dynamic Accent Utility Classes (Guarantees ALL accent elements update) */
+.text-accent, .text-gold-500, .text-gold-600, .text-gold-700 {
+    color: var(--accent) !important;
+}
+
+.bg-accent, .bg-gold-500 {
+    background-color: var(--accent) !important;
+    color: var(--accent-text) !important;
+}
+
+.border-accent, .border-gold-500, .border-gold-500\/30, .border-gold-500\/40 {
+    border-color: rgba(var(--accent-rgb), 0.4) !important;
+}
+
+.bg-accent-subtle, .bg-gold-500\/10, .bg-gold-500\/20 {
+    background-color: rgba(var(--accent-rgb), 0.12) !important;
+}
+
+.border-accent-subtle, .border-gold-500\/20 {
+    border-color: rgba(var(--accent-rgb), 0.3) !important;
+}
+
+.text-accent-gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, rgba(var(--accent-rgb), 0.75) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glow-accent {
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4) !important;
+}
+
+.glow-accent-lg {
+    box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.5) !important;
+}
+
+.glow-accent-text {
+    text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6) !important;
+}
+
+/* Art Deco Clip Paths */
+.clip-octagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+/* Art Deco Cards & Buttons */
+.deco-border {
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.deco-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.deco-card:hover {
+    transform: translateY(-4px);
+    background-color: var(--bg-card-hover);
+    border-color: rgba(var(--accent-rgb), 0.5);
+    box-shadow: 0 12px 30px rgba(var(--accent-rgb), 0.2);
+}
+
+.deco-btn {
+    background-color: var(--accent);
+    color: var(--accent-text) !important;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.deco-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.4);
+}
+
+/* Focus Rings for Accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--bg-card);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(167, 167, 167, 0.3);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Vinyl Disc Spin Animation */
+@keyframes spinVinyl {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-vinyl-spin {
+    animation: spinVinyl 8s linear infinite;
+}

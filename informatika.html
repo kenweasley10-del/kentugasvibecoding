@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatika — Ken Weasley Chenzen (Spotify UI)</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portofolio tugas dan proyek mata pelajaran Informatika Ken Weasley Chenzen (Vibe Coding, Python, Jaringan, dan AI Dev).">
+    <meta name="author" content="Ken Weasley Chenzen">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global Shared Theme & Music & Article System -->
+    <link rel="stylesheet" href="theme.css">
+    <script src="theme.js"></script>
+    <script src="music-list.js"></script>
+    <script src="visitor-playlist.js"></script>
+    <script src="spotify-panel.js"></script>
+    <script src="articles.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#1DB954',
+                            600: '#1ed760',
+                            700: '#16a34a',
+                            800: '#15803d',
+                            900: '#166534'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Montserrat"', '"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', '"Montserrat"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans min-h-screen flex flex-col antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-text)] relative deco-bg-pattern">
+
+    <!-- SPOTIFY AMBIENT GRADIENT OVERLAY -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none">
+        <div class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-[var(--accent)]/20 via-transparent to-transparent"></div>
+    </div>
+
+    <!-- DESKTOP NAVIGATION HEADER (SPOTIFY STYLE) -->
+    <header
+        class="hidden md:flex sticky top-0 w-full bg-theme-header backdrop-blur-xl border-b border-theme z-30 px-8 py-3.5 justify-between items-center transition-colors duration-300">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center shadow-[0_0_15px_rgba(var(--accent-rgb),0.4)]">
+                <i class="fa-brands fa-spotify text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-sm font-extrabold tracking-wider font-display text-theme-main uppercase flex items-center gap-1.5">
+                    Ken Weasley Chenzen
+                    <i class="fa-solid fa-circle-check text-[var(--accent)] text-xs" title="Verified Artist Portfolio"></i>
+                </h1>
+                <p class="text-[9px] text-theme-muted tracking-widest uppercase font-semibold">Portofolio Informatika & Vibe Coding</p>
+            </div>
+        </div>
+
+        <nav class="flex flex-row items-center gap-1.5 bg-theme-card p-1.5 rounded-full border border-theme shadow-sm">
+            <a href="index.html#dashboard"
+                class="nav-btn text-xs font-semibold tracking-wider font-display transition duration-150 text-theme-muted hover:text-theme-main px-4 py-2 rounded-full border border-transparent">
+                DASHBOARD
+            </a>
+            <a href="index.html#profil"
+                class="nav-btn text-xs font-semibold tracking-wider font-display transition duration-150 text-theme-muted hover:text-theme-main px-4 py-2 rounded-full border border-transparent">
+                PROFIL SAYA
+            </a>
+            <a href="informatika.html"
+                class="nav-btn text-xs font-extrabold tracking-wider font-display transition duration-150 text-[var(--accent-text)] bg-[var(--accent)] px-4 py-2 rounded-full shadow-md">
+                INFORMATIKA
+            </a>
+            <a href="bahasaindonesia.html"
+                class="nav-btn text-xs font-semibold tracking-wider font-display transition duration-150 text-theme-muted hover:text-theme-main px-4 py-2 rounded-full border border-transparent">
+                B. INDONESIA
+            </a>
+            <a href="index.html#jadwal"
+                class="nav-btn text-xs font-semibold tracking-wider font-display transition duration-150 text-theme-muted hover:text-theme-main px-4 py-2 rounded-full border border-transparent">
+                JADWAL
+            </a>
+            <a href="index.html#games"
+                class="nav-btn text-xs font-semibold tracking-wider font-display transition duration-150 text-theme-muted hover:text-theme-main px-4 py-2 rounded-full border border-transparent">
+                MINI GAMES
+            </a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+            <!-- Accent Customizer Button -->
+            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-desktop" aria-label="Change accent color" title="Kustomisasi Warna Aksen"
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-theme bg-theme-card text-theme-main hover:border-[var(--accent)] transition duration-200 text-xs font-mono cursor-pointer shadow-sm">
+                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm inline-block" id="desktop-accent-swatch" style="background-color: var(--accent);"></span>
+                <span class="text-[11px] font-semibold hidden lg:inline">Aksen</span>
+            </button>
+
+            <!-- Theme Toggle Button -->
+            <button onclick="toggleTheme()" id="theme-toggle-desktop" aria-label="Toggle dark mode" title="Mode Dark / Light"
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-theme bg-theme-card text-[var(--accent)] hover:bg-[var(--accent)]/10 transition duration-200 text-xs font-mono cursor-pointer shadow-sm">
+                <i class="fa-solid fa-moon theme-toggle-icon text-[var(--accent)] text-sm"></i>
+                <span class="theme-toggle-text text-[11px] font-semibold hidden lg:inline">Spotify Dark</span>
+            </button>
+
+            <div class="h-4 w-[1px] bg-theme border-r border-theme"></div>
+
+            <div class="flex items-center gap-3 text-theme-muted text-xs">
+                <a href="https://www.tiktok.com/@postingthingsisaw" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[var(--accent)] transition duration-150 p-1" aria-label="TikTok" title="TikTok">
+                    <i class="fa-brands fa-tiktok text-sm"></i>
+                </a>
+                <a href="https://www.instagram.com/fotomobilasli/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[var(--accent)] transition duration-150 p-1" aria-label="Instagram" title="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="mailto:Kenweasley10@gmail.com" class="hover:text-[var(--accent)] transition duration-150 p-1"
+                    aria-label="Email" title="Email">
+                    <i class="fa-regular fa-envelope text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION HEADER -->
+    <header
+        class="md:hidden flex items-center justify-between p-4 bg-theme-header border-b border-theme sticky top-0 z-30 backdrop-blur-md transition-colors duration-300">
+        <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center">
+                <i class="fa-brands fa-spotify text-base"></i>
+            </div>
+            <div>
+                <h1 class="text-xs font-extrabold font-display text-theme-main uppercase tracking-widest flex items-center gap-1">
+                    Ken Weasley C.
+                    <i class="fa-solid fa-circle-check text-[var(--accent)] text-[10px]"></i>
+                </h1>
+                <p class="text-[9px] text-theme-muted tracking-widest uppercase">Spotify Web UI</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <!-- Accent Customizer Button Mobile -->
+            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-mobile" aria-label="Change accent color" title="Kustomisasi Warna Aksen"
+                class="p-2 rounded-full bg-theme-card text-theme-main border border-theme text-xs cursor-pointer shadow-sm">
+                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm block" id="mobile-accent-swatch" style="background-color: var(--accent);"></span>
+            </button>
+
+            <!-- Theme Toggle Button Mobile -->
+            <button onclick="toggleTheme()" id="theme-toggle-mobile" aria-label="Toggle dark mode" title="Mode Dark / Light"
+                class="p-2 rounded-full bg-theme-card text-[var(--accent)] border border-theme text-xs cursor-pointer shadow-sm">
+                <i class="fa-solid fa-moon theme-toggle-icon"></i>
+            </button>
+            <span
+                class="text-[9px] uppercase font-mono tracking-widest px-2.5 py-1 rounded-full border border-[var(--accent)]/30 text-[var(--accent)] bg-[var(--accent)]/10 font-bold">v3.0</span>
+        </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav
+        class="md:hidden fixed bottom-0 inset-x-0 bg-theme-header border-t border-theme z-40 flex items-center justify-around py-2 px-1 backdrop-blur-md transition-colors duration-300">
+        <a href="index.html#dashboard"
+            class="nav-btn-mobile text-[10px] font-semibold tracking-wider font-display text-theme-muted px-2 py-1.5 rounded-full border border-transparent">
+            HOME
+        </a>
+        <a href="index.html#profil"
+            class="nav-btn-mobile text-[10px] font-semibold tracking-wider font-display text-theme-muted px-2 py-1.5 rounded-full border border-transparent">
+            PROFIL
+        </a>
+        <a href="informatika.html"
+            class="nav-btn-mobile text-[10px] font-bold tracking-wider font-display text-black bg-[var(--accent)] px-3 py-1.5 rounded-full shadow-md">
+            INFO
+        </a>
+        <a href="bahasaindonesia.html"
+            class="nav-btn-mobile text-[10px] font-semibold tracking-wider font-display text-theme-muted px-2 py-1.5 rounded-full border border-transparent">
+            B. INDO
+        </a>
+        <a href="index.html#jadwal"
+            class="nav-btn-mobile text-[10px] font-semibold tracking-wider font-display text-theme-muted px-2 py-1.5 rounded-full border border-transparent">
+            JADWAL
+        </a>
+        <a href="index.html#games"
+            class="nav-btn-mobile text-[10px] font-semibold tracking-wider font-display text-theme-muted px-2 py-1.5 rounded-full border border-transparent">
+            GAMES
+        </a>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-1 min-h-screen pb-32 md:pb-20 flex flex-col relative px-6 md:px-12 py-8 max-w-5xl w-full mx-auto">
+
+        <!-- Live Date Header (Desktop) -->
+        <div class="hidden md:flex justify-between items-center pb-6 border-b border-theme mb-10">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-calendar-check text-[var(--accent)] text-xs"></i>
+                <span class="text-xs text-theme-muted font-mono" id="live-time">Memuat tanggal...</span>
+            </div>
+            <span
+                class="text-[10px] font-mono tracking-widest text-[var(--accent)] px-3 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 uppercase font-bold shadow-[0_0_12px_rgba(var(--accent-rgb),0.2)]">Halaman Informatika</span>
+        </div>
+
+        <!-- ARTIKEL EDUTAINMENT INFORMATIKA (INTERAKTIF) -->
+        <div class="mb-12 space-y-4">
+            <div class="flex items-center justify-between border-b border-theme pb-3 mb-5">
+                <h2 class="text-sm md:text-base font-bold tracking-wider font-display text-[var(--accent)] uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-newspaper text-xs"></i> Artikel & Wawasan Teknologi
+                </h2>
+                <span class="text-[10px] font-mono text-[#A7A7A7] uppercase tracking-wider">3 Artikel Utama</span>
+            </div>
+
+            <!-- Artikel 1: Vibe Coding & AI Companion -->
+            <article class="deco-card border border-theme rounded-2xl bg-theme-card overflow-hidden hover-neon transition-all duration-300">
+                <!-- PREVIEW HEADER (selalu tampil) -->
+                <div class="p-5 md:p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2.5 py-0.5 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Vibe Coding & AI</span>
+                            <span class="text-[10px] text-theme-muted font-mono"><i class="fa-regular fa-clock"></i> 5 Min Baca</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-[var(--accent)]">Ken Weasley Chenzen</span>
+                    </div>
+                    <h3 class="text-sm md:text-base font-bold font-display text-theme-main mb-2">
+                        Vibe Coding: Era Baru Pemrograman Berbasis Intuitif & AI Companion
+                    </h3>
+                    <p class="text-xs text-theme-muted leading-relaxed">
+                        <em>Vibe Coding</em> melambangkan pergeseran paradigma tempat pengembang tidak lagi mengetik setiap baris sintaks secara manual, melainkan mengarahkan visi, logika, dan 'vibe' aplikasi menggunakan prompt bahasa alami yang dieksekusi oleh AI.
+                    </p>
+                    <!-- Tombol Baca Selengkapnya -->
+                    <button type="button" data-target="inf-art-1" onclick="toggleArticle('inf-art-1', this)"
+                        class="baca-selengkapnya mt-4 flex items-center gap-2 text-xs font-bold text-[var(--accent)] hover:opacity-80 transition-colors group cursor-pointer">
+                        <span class="artikel-btn-label">Baca Selengkapnya</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 artikel-arrow"></i>
+                    </button>
+                </div>
+                <!-- KONTEN LENGKAP (tersembunyi awal) -->
+                <div id="inf-art-1" class="hidden border-t border-theme px-5 md:px-6 pb-6 pt-4">
+                    <div class="text-xs md:text-sm text-theme-muted leading-relaxed space-y-4">
+                        <p>
+                            Istilah <strong>"Vibe Coding"</strong> (yang populer diperkenalkan oleh Andrej Karpathy, mantan Direktur AI Tesla dan Co-founder OpenAI) merepresentasikan cara baru manusia berinteraksi dengan komputer. Di era ini, pengembang tidak lagi menghabiskan jam berharganya untuk menghafal sintaks rumit atau mengatasi sintaks <em>boilerplate</em>. Sebaliknya, mereka berfokus pada <em>intent</em> (niat), desain antarmuka, dan <em>user experience</em>, sementara eksekusi kode sepenuhnya ditangani oleh <strong>AI Coding Companion</strong>.
+                        </p>
+                        
+                        <!-- Gambar Ilustrasi Vibe Coding -->
+                        <div class="my-4 rounded-2xl overflow-hidden border border-[var(--accent)]/30 bg-theme-card p-3 shadow-xl">
+                            <img src="vibe_coding_demo.png" alt="Vibe Coding & AI Companion Illustration" class="w-full h-auto rounded-xl object-cover max-h-96 shadow-md">
+                            <p class="text-[11px] font-mono text-center text-[var(--accent)] mt-2.5 font-semibold">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Ilustrasi Vibe Coding: Pengembang mengendalikan arsitektur aplikasi melalui prompt bahasa alami dan asisten AI berkinerja tinggi.
+                            </p>
+                        </div>
+
+                        <p>
+                            Dalam tren <em>Vibe Coding</em>, seorang developer memasuki apa yang disebut <strong>Flow State</strong>. Mereka cukup menuangkan ide, aturan bisnis, dan nuansa visual ("vibe") yang diinginkan ke dalam dialog asisten AI (seperti Google Antigravity & Gemini). AI secara otomatis memetakan repositori, menulis komponen HTML/CSS, membuat fungsi JavaScript, serta menguji hasilnya secara real-time. Jika terdapat bug, pengembang tidak perlu pusing menelusuri ribuan baris kode; mereka cukup memberikan masukan berdasarkan hasil observasi dan mengizinkan AI melakukan refactoring mandiri.
+                        </p>
+                        <p>
+                            Keuntungan terbesar dari fenomena ini adalah <strong>akselerasi prototipe yang luar biasa</strong>. Aplikasi web atau fitur baru yang dahulu memerlukan waktu berminggu-minggu kini dapat diselesaikan hanya dalam hitungan jam. Kendati demikian, Vibe Coding bukan berarti meniadakan kemampuan pemikiran kritis. Seorang pengembang modern dituntut untuk memiliki kemampuan evaluasi logika yang tajam, arsitektur sistem yang kuat, dan pemahaman <em>prompt engineering</em> agar hasil buatan AI tetap aman, efisien, dan berestetika tinggi.
+                        </p>
+                        <div class="p-4 bg-theme-card border border-[var(--accent)]/40 rounded-xl font-mono text-[11px] text-[var(--accent)] shadow-inner">
+                            <strong>Poin Kunci Vibe Coding:</strong> Pemrograman Berbasis Bahasa Alami • Prototipe Kilat (Fast Iteration) • Kolaborasi Intuitif Manusia & AI • Fokus pada Ide & Estetika
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artikel 2: Keamanan Siber -->
+            <article class="deco-card border border-theme rounded-2xl bg-theme-card overflow-hidden hover-neon transition-all duration-300">
+                <!-- PREVIEW HEADER -->
+                <div class="p-5 md:p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2.5 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Cybersecurity</span>
+                            <span class="text-[10px] text-theme-muted font-mono"><i class="fa-regular fa-clock"></i> 4 Min Baca</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-[var(--accent)]">Ken Weasley Chenzen</span>
+                    </div>
+                    <h3 class="text-sm md:text-base font-bold font-display text-theme-main mb-2">
+                        Fondasi Utama Keamanan Siber (Cybersecurity) di Era Komputasi Awan & IoT
+                    </h3>
+                    <p class="text-xs text-theme-muted leading-relaxed">
+                        Di era perangkat terhubung, keamanan siber bukan lagi pilihan — melainkan kewajiban. Setiap aplikasi modern harus memenuhi prinsip <em>CIA Triad</em> sebagai pondasi perlindungan data.
+                    </p>
+                    <button type="button" data-target="inf-art-2" onclick="toggleArticle('inf-art-2', this)"
+                        class="baca-selengkapnya mt-4 flex items-center gap-2 text-xs font-semibold text-[var(--accent)] hover:opacity-80 transition-colors group cursor-pointer">
+                        <span class="artikel-btn-label">Baca Selengkapnya</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 artikel-arrow"></i>
+                    </button>
+                </div>
+                <!-- KONTEN LENGKAP -->
+                <div id="inf-art-2" class="hidden border-t border-theme/40 px-5 md:px-6 pb-6 pt-4">
+                    <div class="text-xs md:text-sm text-theme-muted leading-relaxed space-y-3">
+                        <p>
+                            Seiring berkembangnya ekosistem Internet of Things (IoT) dan migrasi besar-besaran ke komputasi awan (<em>cloud computing</em>), ancaman terhadap keamanan data digital meningkat secara eksponensial. <strong>Keamanan Siber (Cybersecurity)</strong> kini menjadi pilar strategis yang tidak dapat dipisahkan dari pengembangan perangkat lunak modern. Setiap aplikasi yang dibangun wajib mematuhi triade keamanan CIA: <em>Confidentiality</em> (data hanya dapat diakses oleh pihak berwenang), <em>Integrity</em> (data tidak dapat dimanipulasi tanpa terdeteksi), dan <em>Availability</em> (layanan selalu dapat diakses saat dibutuhkan).
+                        </p>
+                        <p>
+                            Ancaman siber hadir dalam berbagai bentuk yang semakin canggih. Serangan <em>Phishing</em> memanipulasi psikologi pengguna untuk mencuri kredensial, <em>SQL Injection</em> mengeksploitasi celah pada query database, sementara <em>Cross-Site Scripting (XSS)</em> menyisipkan skrip berbahaya ke dalam halaman web yang sah. Untuk menghadapi ini, developer wajib mengadopsi pendekatan <strong>Defensive Programming</strong>: memvalidasi dan sanitasi setiap input dari pengguna, menerapkan prinsip <em>least privilege</em>, serta menggunakan enkripsi TLS/SSL pada setiap komunikasi data.
+                        </p>
+                        <p>
+                            Langkah praktis yang harus diimplementasikan mencakup: penggunaan autentikasi berlapis (Multi-Factor Authentication), rotasi kunci API secara berkala, penerapan Content Security Policy (CSP) pada header HTTP, serta pemindaian kerentanan (vulnerability scanning) secara rutin pada dependensi proyek. Dengan mindset "security by design" — artinya keamanan dibangun sejak tahap desain, bukan ditambahkan belakangan — kita dapat menciptakan aplikasi yang kokoh dan terpercaya.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artikel 3: Web Architecture -->
+            <article class="deco-card border border-theme rounded-2xl bg-theme-card overflow-hidden hover-neon transition-all duration-300">
+                <!-- PREVIEW HEADER -->
+                <div class="p-5 md:p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2.5 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Web Architecture</span>
+                            <span class="text-[10px] text-theme-muted font-mono"><i class="fa-regular fa-clock"></i> 6 Min Baca</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-[var(--accent)]">Ken Weasley Chenzen</span>
+                    </div>
+                    <h3 class="text-sm md:text-base font-bold font-display text-theme-main mb-2">
+                        Evolusi Arsitektur Web: Dari Monolitik ke Microservices & SPA
+                    </h3>
+                    <p class="text-xs text-theme-muted leading-relaxed">
+                        Memahami perkembangan lanskap teknologi web dari aplikasi halaman statis tradisional hingga arsitektur <em>Single Page Application (SPA)</em> interaktif berkinerja tinggi.
+                    </p>
+                    <button type="button" data-target="inf-art-3" onclick="toggleArticle('inf-art-3', this)"
+                        class="baca-selengkapnya mt-4 flex items-center gap-2 text-xs font-semibold text-[var(--accent)] hover:opacity-80 transition-colors group cursor-pointer">
+                        <span class="artikel-btn-label">Baca Selengkapnya</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 artikel-arrow"></i>
+                    </button>
+                </div>
+                <!-- KONTEN LENGKAP -->
+                <div id="inf-art-3" class="hidden border-t border-theme/40 px-5 md:px-6 pb-6 pt-4">
+                    <div class="text-xs md:text-sm text-theme-muted leading-relaxed space-y-3">
+                        <p>
+                            Perjalanan web dimulai dari era halaman HTML statis yang sederhana — setiap interaksi pengguna membutuhkan permintaan baru ke server, menghasilkan muat ulang halaman penuh yang lambat dan tidak nyaman. Kemudian hadir pendekatan <strong>Single Page Application (SPA)</strong> yang merevolusi cara kerja antarmuka web: seluruh aset dimuat sekali di awal, dan setelahnya semua perpindahan tampilan serta pembaruan data ditangani langsung di sisi klien (<em>Client-Side Rendering</em>) menggunakan JavaScript, tanpa muat ulang halaman sama sekali.
+                        </p>
+                        <p>
+                            Dalam implementasi SPA modern, perancang memanfaatkan berbagai API browser bawaan seperti <code>localStorage</code> dan <code>sessionStorage</code> untuk manajemen state persisten, <code>History API</code> untuk navigasi URL yang alami, serta <code>Fetch API</code> untuk komunikasi data asinkron ke backend. Framework seperti React, Vue, dan Angular telah menjadi tulang punggung ekosistem ini — namun Web Vanilla JavaScript pun dapat mengimplementasikan prinsip SPA secara efektif, seperti yang diterapkan pada portofolio ini sendiri.
+                        </p>
+                        <p>
+                            Tren terbaru membawa konsep <strong>Hybrid Rendering</strong> yang menggabungkan keunggulan SPA (interaktivitas tinggi) dengan Server-Side Rendering (SEO-friendly, waktu muat pertama cepat). Framework seperti Next.js dan Nuxt.js menjadi jawaban atas kebutuhan ini. Ke depannya, dengan berkembangnya Web Components standar dan teknologi seperti WebAssembly, arsitektur web akan semakin fleksibel dan bertenaga tinggi.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- CONTENT VIEW: INFORMATIKA -->
+
+        <div class="flex-1">
+            <section id="view-informatika" class="space-y-8 animate-fade-in">
+                <!-- Search & Filters -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <!-- Filters -->
+                    <div class="flex flex-wrap gap-2 text-xs font-medium" id="filter-container-inf">
+                        <button onclick="filterCategory('inf', 'semua')"
+                            class="btn-filter-inf px-3 py-1.5 rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.2)] font-mono">Semua</button>
+                        <button onclick="filterCategory('inf', 'web')"
+                            class="btn-filter-inf px-3 py-1.5 rounded-lg border border-theme text-theme-muted hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition font-mono">Web Dev</button>
+                        <button onclick="filterCategory('inf', 'python')"
+                            class="btn-filter-inf px-3 py-1.5 rounded-lg border border-theme text-theme-muted hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition font-mono">Python</button>
+                        <button onclick="filterCategory('inf', 'jaringan')"
+                            class="btn-filter-inf px-3 py-1.5 rounded-lg border border-theme text-theme-muted hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition font-mono">Jaringan</button>
+                        <button onclick="filterCategory('inf', 'ai')"
+                            class="btn-filter-inf px-3 py-1.5 rounded-lg border border-theme text-theme-muted hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition font-mono">AI Dev</button>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="relative w-full md:w-64">
+                        <input type="text" id="search-inf" onkeyup="filterTugas('inf')" placeholder="Cari proyek..."
+                            class="w-full px-4 py-2 bg-theme-card border border-theme rounded-xl text-xs text-theme-main placeholder-theme-muted focus:outline-none focus:border-[var(--accent)] transition duration-150">
+                    </div>
+                </div>
+
+                <!-- Assignment Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-inf">
+                    <!-- Card 1 -->
+                    <div class="card-tugas border border-theme rounded-2xl bg-theme-card p-6 flex flex-col justify-between hover-neon"
+                        data-category="web" data-title="personal portfolio website">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Web Dev</span>
+                                <span class="text-[10px] text-[var(--accent)] font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span> Selesai
+                                </span>
+                            </div>
+                            <h3 class="text-sm font-bold text-theme-main">Personal Portfolio Website</h3>
+                            <p class="text-xs text-theme-muted leading-relaxed line-clamp-3">
+                                Merancang dan membangun website portofolio interaktif dari nol untuk mempublikasikan
+                                proyek sekolah. Menggunakan Tailwind CSS untuk tampilan modern yang responsif dengan
+                                efek minimalis.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme flex justify-between items-center">
+                            <span class="text-[10px] text-theme-muted font-mono">UAS</span>
+                            <button onclick="openModal('inf', 0)"
+                                class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1">
+                                Lihat Detail <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card-tugas border border-theme rounded-2xl bg-theme-card p-6 flex flex-col justify-between hover-neon"
+                        data-category="python" data-title="kalkulator interaktif gui python">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Python</span>
+                                <span class="text-[10px] text-[var(--accent)] font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span> Selesai
+                                </span>
+                            </div>
+                            <h3 class="text-sm font-bold text-theme-main">Kalkulator Interaktif GUI</h3>
+                            <p class="text-xs text-theme-muted leading-relaxed line-clamp-3">
+                                Program kalkulator berbasis GUI (Graphical User Interface) menggunakan library Tkinter
+                                di Python. Mampu memproses perhitungan dasar matematika serta fungsi rumus luas/keliling
+                                bangun datar.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme flex justify-between items-center">
+                            <span class="text-[10px] text-theme-muted font-mono">Tugas Mingguan</span>
+                            <button onclick="openModal('inf', 1)"
+                                class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1">
+                                Lihat Detail <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card-tugas border border-theme rounded-2xl bg-theme-card p-6 flex flex-col justify-between hover-neon"
+                        data-category="jaringan" data-title="simulasi jaringan lan cisco packet tracer">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Jaringan</span>
+                                <span class="text-[10px] text-[var(--accent)] font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span> Selesai
+                                </span>
+                            </div>
+                            <h3 class="text-sm font-bold text-theme-main">Simulasi Topologi LAN Sekolah</h3>
+                            <p class="text-xs text-theme-muted leading-relaxed line-clamp-3">
+                                Merancang skema jaringan lokal (LAN) untuk laboratorium komputer sekolah menggunakan
+                                Cisco Packet Tracer. Implementasi konfigurasi IP statis, DHCP Server, serta pengujian
+                                konektivitas PING.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme flex justify-between items-center">
+                            <span class="text-[10px] text-theme-muted font-mono">Tugas Kelompok</span>
+                            <button onclick="openModal('inf', 2)"
+                                class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1">
+                                Lihat Detail <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card-tugas border border-theme rounded-2xl bg-theme-card p-6 flex flex-col justify-between hover-neon"
+                        data-category="web" data-title="aplikasi to do list localstorage">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">Web Dev</span>
+                                <span class="text-[10px] text-[var(--accent)] font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span> Selesai
+                                </span>
+                            </div>
+                            <h3 class="text-sm font-bold text-theme-main">Aplikasi To-Do List Interaktif</h3>
+                            <p class="text-xs text-theme-muted leading-relaxed line-clamp-3">
+                                Web app fungsional untuk mengelola daftar aktivitas harian. Data tugas tersimpan secara
+                                persisten pada browser pengguna memanfaatkan LocalStorage API HTML5.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme flex justify-between items-center">
+                            <span class="text-[10px] text-theme-muted font-mono">Tugas Mandiri</span>
+                            <button onclick="openModal('inf', 3)"
+                                class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1">
+                                Lihat Detail <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card-tugas border border-theme rounded-2xl bg-theme-card p-6 flex flex-col justify-between hover-neon"
+                        data-category="ai" data-title="eksperimen asisten pengodean ai antigravity">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">AI Dev</span>
+                                <span class="text-[10px] text-[var(--accent)] font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span> Selesai
+                                </span>
+                            </div>
+                            <h3 class="text-sm font-bold text-theme-main">Eksperimen AI Coding Assistant Antigravity</h3>
+                            <p class="text-xs text-theme-muted leading-relaxed line-clamp-3">
+                                Integrasi dan pengujian Antigravity, asisten AI coding revolusioner dari Google DeepMind. Mengeksplorasi kemampuan pemecahan masalah otomatis dan pembuatan kode canggih.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme flex justify-between items-center">
+                            <span class="text-[10px] text-theme-muted font-mono">Tugas Eksperimental</span>
+                            <button onclick="openModal('inf', 4)"
+                                class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1">
+                                Lihat Detail <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FOOTER -->
+        <footer
+            class="mt-20 py-8 border-t border-theme text-[11px] text-theme-muted flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-brands fa-spotify text-[var(--accent)] text-base"></i>
+                <p>© 2026 Ken Weasley Chenzen • SMA Cinta Kasih Tzu Chi</p>
+            </div>
+            <p class="font-mono text-[var(--accent)]">Spotify Modern UI • Powered by Vibe Coding</p>
+        </footer>
+    </main>
+
+    <!-- SPOTIFY PERSISTENT PLAYER BAR (DESKTOP FOOTER PLAYER WIDGET) -->
+    <div class="fixed bottom-0 inset-x-0 bg-theme-card border-t border-theme z-50 px-6 py-3 hidden md:flex items-center justify-between text-xs text-theme-main">
+        <!-- Left: Now Playing Info -->
+        <div class="flex items-center gap-3.5 w-1/4">
+            <div class="w-12 h-12 rounded-lg bg-theme-card border border-theme flex items-center justify-center relative overflow-hidden group shrink-0">
+                <img src="vibe_coding_demo.png" alt="Vibe Coding Track Cover" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+                    <i class="fa-solid fa-expand text-white text-xs"></i>
+                </div>
+            </div>
+            <div class="truncate">
+                <h5 class="text-xs font-bold text-theme-main hover:underline cursor-pointer truncate">Vibe Coding: Artikel & Demo AI</h5>
+                <p class="text-[11px] text-theme-muted hover:underline cursor-pointer truncate">Ken Weasley Chenzen • Informatika</p>
+            </div>
+            <button class="text-theme-muted hover:text-[var(--accent)] transition ml-1" title="Tambah ke Favorit">
+                <i class="fa-solid fa-heart text-xs text-[var(--accent)]"></i>
+            </button>
+        </div>
+
+        <!-- Center: Playback Controls & Progress Bar -->
+        <div class="flex flex-col items-center gap-1.5 w-2/4 max-w-xl">
+            <div class="flex items-center gap-5 text-theme-muted">
+                <button class="hover:text-theme-main transition text-xs"><i class="fa-solid fa-shuffle"></i></button>
+                <button class="hover:text-theme-main transition text-sm"><i class="fa-solid fa-backward-step"></i></button>
+                <button onclick="toggleGlobalPlay(this)" class="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center transition hover:scale-105 shadow-md">
+                    <i class="fa-solid fa-pause text-xs" id="global-play-icon"></i>
+                </button>
+                <button class="hover:text-theme-main transition text-sm"><i class="fa-solid fa-forward-step"></i></button>
+                <button class="hover:text-theme-main transition text-xs"><i class="fa-solid fa-repeat text-[var(--accent)]"></i></button>
+            </div>
+            <!-- Progress Line -->
+            <div class="w-full flex items-center gap-2 text-[10px] font-mono text-theme-muted">
+                <span>2:15</span>
+                <div class="flex-1 h-1 bg-theme-card border border-theme rounded-full overflow-hidden cursor-pointer relative group">
+                    <div class="h-full bg-[var(--accent)] rounded-full w-3/4 group-hover:bg-[var(--accent-hover)] transition-colors"></div>
+                </div>
+                <span>4:10</span>
+            </div>
+        </div>
+
+        <!-- Right: Volume & Extra Controls -->
+        <div class="flex items-center justify-end gap-3.5 text-theme-muted w-1/4">
+            <button class="hover:text-theme-main transition" title="Lirik"><i class="fa-solid fa-microphone text-xs"></i></button>
+            <button class="hover:text-theme-main transition" title="Antrean Track"><i class="fa-solid fa-bars text-xs"></i></button>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-volume-high text-xs hover:text-theme-main cursor-pointer"></i>
+                <div class="w-20 h-1 bg-theme-card border border-theme rounded-full overflow-hidden cursor-pointer group">
+                    <div class="h-full bg-[var(--accent)] rounded-full w-4/5"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE MODAL DETAIL -->
+    <div id="project-modal"
+        class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div
+            class="relative bg-theme-card max-w-2xl w-full rounded-2xl overflow-hidden border border-[var(--accent)]/40 shadow-[0_0_30px_rgba(var(--accent-rgb),0.25)] flex flex-col max-h-[85vh] animate-fade-in">
+
+            <div class="p-6 border-b border-theme flex justify-between items-start">
+                <div>
+                    <span id="modal-category"
+                        class="text-[10px] uppercase font-mono tracking-widest text-[var(--accent)] px-2.5 py-0.5 rounded border border-[var(--accent)]/30 bg-[var(--accent)]/10 font-bold">KATEGORI</span>
+                    <h3 id="modal-title" class="text-base font-extrabold text-theme-main mt-2">Judul Proyek Tugas</h3>
+                </div>
+                <button onclick="closeModal()"
+                    class="text-theme-muted hover:text-[var(--accent)] text-xs font-semibold p-1 transition cursor-pointer">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-1 space-y-4 text-xs md:text-sm text-theme-muted leading-relaxed"
+                id="modal-body-content">
+            </div>
+
+            <div class="px-6 py-4 border-t border-theme bg-theme-card flex justify-between items-center gap-4">
+                <span id="modal-badge-info" class="text-[10px] font-mono uppercase tracking-widest text-[var(--accent)] font-bold">Info Tambahan</span>
+                <a id="modal-action-btn" href="#" target="_blank"
+                    class="px-4 py-1.5 deco-btn text-xs font-bold rounded-lg transition shadow-md">
+                    Kunjungi Sumber
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const dataTugas = {
+            inf: [
+                {
+                    title: "Personal Portfolio Website",
+                    category: "Web Dev",
+                    info: "UAS • Nilai: 98/100",
+                    actionUrl: "https://github.com",
+                    actionText: "Lihat Kode Sumber",
+                    body: `
+                        <p class="mb-4"><strong>Latar Belakang Proyek:</strong> Proyek ini merupakan ujian akhir mata pelajaran Informatika kelas XI yang bertujuan untuk menyatukan seluruh portofolio digital dalam satu antarmuka terpusat yang siap dihosting.</p>
+                        
+                        <p class="mb-4"><strong>Fitur Unggulan:</strong></p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li>Desain retro minimalis modern bertema gelap dan terang dengan aksen Emas & Bronze.</li>
+                            <li>Tampilan responsif (tata letak Header Desktop dan Bottom Navigation pada mobile).</li>
+                            <li>Sistem navigasi halaman tunggal (Single Page Application) super lancar bebas reload.</li>
+                            <li>Fitur tempat unggah foto profil (avatar) disamping nama pengguna di dashboard dengan memori lokal.</li>
+                            <li>Modal dinamis interaktif untuk menampilkan detail pengerjaan tugas secara rinci.</li>
+                        </ul>
+
+                        <p class="mb-4"><strong>Spesifikasi Teknis:</strong></p>
+                        <code class="block bg-slate-950 border border-gold-500/30 p-3 rounded-lg font-mono text-xs text-gold-300 mb-4 whitespace-pre-wrap">HTML5 + Tailwind CSS + Vanilla JavaScript ES6</code>
+
+                        <p><strong>Hasil Evaluasi:</strong> Kerapian struktur kode, konsistensi skema warna emas yang dipilih, serta kesiapan web ini untuk langsung disebarluaskan.</p>
+                    `
+                },
+                {
+                    title: "Kalkulator Interaktif GUI Python",
+                    category: "Python",
+                    info: "Tugas Mingguan • Nilai: 95/100",
+                    actionUrl: "https://github.com",
+                    actionText: "Unduh Berkas Python",
+                    body: `
+                        <p class="mb-4"><strong>Deskripsi Program:</strong> Program desktop sederhana berbasis GUI yang dirancang menggunakan bahasa pemrograman Python 3 dan toolkit visual bawaannya, Tkinter.</p>
+                        
+                        <p class="mb-4"><strong>Fungsionalitas Utama:</strong></p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li>Operasi matematika standar: Penjumlahan, Pengurangan, Perkalian, dan Pembagian.</li>
+                            <li>Kalkulator Geometri: Menghitung luas serta keliling bidang lingkaran, persegi panjang, dan segitiga.</li>
+                            <li>Penanganan Error: Mencegah error pembagian dengan angka nol (ZeroDivisionError) secara elegan menggunakan pop-up peringatan.</li>
+                        </ul>
+
+                        <p class="mb-4"><strong>Cuplikan Struktur Kode Program:</strong></p>
+                        <pre class="bg-slate-950 border border-gold-500/30 p-3 rounded-lg text-[11px] font-mono text-gold-300 mb-4 overflow-x-auto custom-scrollbar">
+import tkinter as tk
+from tkinter import messagebox
+
+def hitung():
+    try:
+        val1 = float(entry_val1.get())
+        val2 = float(entry_val2.get())
+        op = operator.get()
+        if op == "+": res = val1 + val2
+        elif op == "/":
+            if val2 == 0: raise ZeroDivisionError
+            res = val1 / val2
+        label_hasil.config(text=f"Hasil: {res}")
+    except ZeroDivisionError:
+        messagebox.showerror("Error", "Tidak bisa membagi dengan nol!")
+    except ValueError:
+        messagebox.showerror("Error", "Masukkan input angka yang valid!")</pre>
+                    `
+                },
+                {
+                    title: "Simulasi Topologi LAN Sekolah",
+                    category: "Jaringan",
+                    info: "Tugas Kelompok • Nilai: 92/100",
+                    actionUrl: "https://github.com",
+                    actionText: "Unduh File .pkt",
+                    body: `
+                        <p class="mb-4"><strong>Latar Belakang:</strong> Dalam tugas kelompok praktikum instalasi jaringan, kami ditugaskan merancang topologi jaringan lokal untuk 3 ruangan laboratorium sekolah dengan batasan subnet mask IPv4 tertentu.</p>
+                        
+                        <p class="mb-4"><strong>Skema Konfigurasi & Perangkat:</strong></p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li>1 Switch Pusat dan 3 Switch Laboratorium (Cisco 2960).</li>
+                            <li>1 Server Pusat bertindak sebagai DHCP Server untuk membagikan IP secara otomatis.</li>
+                            <li>Lab A (10 PC client), Lab B (8 PC client), Lab C (12 PC client).</li>
+                            <li>Alamat IP Kelas C: 192.168.10.0 dengan Subnetting CIDR /27 (255.255.255.224).</li>
+                        </ul>
+                    `
+                },
+                {
+                    title: "Aplikasi To-Do List Interaktif",
+                    category: "Web Dev",
+                    info: "Tugas Praktik Mandiri • Nilai: 96/100",
+                    actionUrl: "https://github.com",
+                    actionText: "Uji Coba Aplikasi Live",
+                    body: `
+                        <p class="mb-4"><strong>Deskripsi Aplikasi:</strong> Aplikasi pencatatan tugas sederhana yang menerapkan manajemen memori internal browser. Dibuat menggunakan JavaScript murni (Vanilla JS) tanpa library eksternal untuk melatih pemahaman manipulasi elemen halaman web secara dinamis.</p>
+                        
+                        <p class="mb-4"><strong>Fitur Utama:</strong></p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li>Membuat tugas baru (Create), mencoret tugas selesai (Update), dan menghapus tugas (Delete).</li>
+                            <li>Penyimpanan Permanen: Menggunakan API <code>localStorage</code> sehingga data tugas tidak hilang walaupun browser ditutup atau komputer dimuat ulang.</li>
+                        </ul>
+                    `
+                },
+                {
+                    title: "Eksperimen AI Coding Assistant Antigravity",
+                    category: "AI Dev",
+                    info: "Tugas Eksperimental • Nilai: 99/100",
+                    actionUrl: "https://deepmind.google",
+                    actionText: "Kunjungi Google DeepMind",
+                    body: `
+                        <p class="mb-4"><strong>Latar Belakang:</strong> Antigravity adalah asisten pengodean AI (AI Coding Assistant) agenik tangguh yang dikembangkan oleh tim Google DeepMind untuk mendukung Advanced Agentic Coding. Eksperimen ini mengeksplorasi integrasi agen AI dalam siklus pengembangan perangkat lunak otomatis.</p>
+                        
+                        <p class="mb-4"><strong>Fitur & Keunggulan Eksperimen:</strong></p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li><strong>Analisis Konteks Mendalam:</strong> Kemampuan agen untuk memetakan arsitektur proyek secara mandiri dan mengidentifikasi potensi bug.</li>
+                            <li><strong>Pemecahan Masalah Otonom:</strong> Memformulasikan rencana implementasi terperinci sebelum melakukan modifikasi kode.</li>
+                            <li><strong>Refactoring & Optimasi:</strong> Antigravity mampu melakukan refactoring kode kompleks secara presisi dengan penataan gaya visual yang modern dan premium.</li>
+                        </ul>
+
+                        <p class="mb-4"><strong>Spesifikasi Teknis Eksperimen:</strong></p>
+                        <code class="block bg-slate-950 border border-gold-500/30 p-3 rounded-lg font-mono text-xs text-gold-300 mb-4 whitespace-pre-wrap">Google Gemini Model Family + Advanced Agentic Coding Toolkit</code>
+                        
+                        <p><strong>Kesimpulan:</strong> Eksperimen ini menunjukkan peningkatan efisiensi yang signifikan dalam pengembangan aplikasi web dan pemecahan masalah pemrograman secara real-time.</p>
+                    `
+                }
+            ]
+        };
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            updateThemeIcons(savedTheme);
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const newTheme = isDark ? 'light' : 'dark';
+
+            if (newTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcons(newTheme);
+        }
+
+        function updateThemeIcons(theme) {
+            const icons = document.querySelectorAll('.theme-toggle-icon');
+            const texts = document.querySelectorAll('.theme-toggle-text');
+
+            icons.forEach(icon => {
+                if (theme === 'dark') {
+                    icon.className = 'fa-solid fa-moon theme-toggle-icon text-[var(--accent)]';
+                } else {
+                    icon.className = 'fa-solid fa-sun theme-toggle-icon text-amber-500';
+                }
+            });
+
+            texts.forEach(text => {
+                text.textContent = theme === 'dark' ? 'Gelap' : 'Terang';
+            });
+        }
+
+        function filterCategory(subjek, kategori) {
+            const searchInput = document.getElementById('search-inf');
+            if (searchInput) searchInput.value = '';
+
+            const filterButtons = document.querySelectorAll(`.btn-filter-${subjek}`);
+
+            filterButtons.forEach(btn => {
+                btn.className = `btn-filter-${subjek} px-3 py-1.5 rounded-lg border border-theme text-theme-muted hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition font-mono`;
+            });
+
+            if (event && event.target) {
+                event.target.className = `btn-filter-${subjek} px-3 py-1.5 rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.2)] font-mono`;
+            }
+
+            const targetGrid = document.getElementById('grid-inf');
+            const cards = targetGrid.querySelectorAll('.card-tugas');
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (kategori === 'semua' || cardCat === kategori) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterTugas(subjek) {
+            const query = document.getElementById('search-inf').value.toLowerCase().trim();
+            const targetGrid = document.getElementById('grid-inf');
+            const cards = targetGrid.querySelectorAll('.card-tugas');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                const cat = card.getAttribute('data-category');
+                if (title.includes(query) || cat.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(subjek, index) {
+            const data = dataTugas[subjek][index];
+            if (!data) return;
+
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-category').textContent = data.category;
+            document.getElementById('modal-badge-info').textContent = data.info;
+            document.getElementById('modal-body-content').innerHTML = data.body;
+
+            const actionBtn = document.getElementById('modal-action-btn');
+            actionBtn.href = data.actionUrl;
+            actionBtn.textContent = data.actionText;
+
+            if (data.actionUrl === "#") {
+                actionBtn.style.display = 'none';
+            } else {
+                actionBtn.style.display = 'inline-block';
+            }
+
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function updateLiveTime() {
+            const timeEl = document.getElementById('live-time');
+            if (!timeEl) return;
+
+            const opsi = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const hariIni = new Date().toLocaleDateString('id-ID', opsi);
+
+            timeEl.textContent = hariIni;
+        }
+
+        // Note: toggleArticle is provided by shared articles.js
+    </script>
+
+    <!-- ACCENT COLOR CUSTOMIZER MODAL DIALOG -->
+    <div id="color-customizer-modal"
+        class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
+        <div
+            class="relative bg-theme-card max-w-md w-full rounded-2xl overflow-hidden border border-theme shadow-2xl flex flex-col animate-fade-in">
+            <div class="p-5 border-b border-theme flex justify-between items-center bg-theme-card">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-4 h-4 rounded-full border border-black/20 shadow-sm" id="modal-accent-swatch" style="background-color: var(--accent);"></span>
+                    <h3 class="text-sm font-extrabold text-theme-main uppercase tracking-wider font-display">Kustomisasi Aksen Warna</h3>
+                </div>
+                <button onclick="closeColorCustomizer()" class="text-theme-muted hover:text-[var(--accent)] text-sm font-semibold p-1 transition" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-5 text-xs text-theme-muted">
+                <p class="leading-relaxed">Pilih warna aksen utama yang akan diterapkan di seluruh navigasi, tombol, dan elemen interaktif website.</p>
+                <div>
+                    <label class="block text-[11px] font-mono uppercase tracking-widest text-theme-main font-bold mb-2">Pilih Warna (Color Picker):</label>
+                    <div class="flex items-center gap-3">
+                        <input type="color" id="accent-color-picker" value="#1DB954" onchange="setAccentColor(this.value, true)" oninput="setAccentColor(this.value, false)" class="w-12 h-10 rounded-lg cursor-pointer border border-theme bg-transparent p-0.5">
+                        <input type="text" id="accent-hex-input" value="#1DB954" onchange="setAccentColor(this.value, true)" class="flex-1 bg-theme-card border border-theme rounded-lg px-3 py-2 text-xs font-mono font-bold text-theme-main uppercase focus:border-[var(--accent)]">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-mono uppercase tracking-widest text-theme-main font-bold mb-2.5">Preset Warna Populer:</label>
+                    <div class="grid grid-cols-4 gap-2.5">
+                        <button onclick="setAccentColor('#1DB954', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-black shadow-sm transition hover:scale-105" style="background-color: #1DB954;">Spotify</button>
+                        <button onclick="setAccentColor('#3B82F6', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-white shadow-sm transition hover:scale-105" style="background-color: #3B82F6;">Blue</button>
+                        <button onclick="setAccentColor('#8B5CF6', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-white shadow-sm transition hover:scale-105" style="background-color: #8B5CF6;">Purple</button>
+                        <button onclick="setAccentColor('#EC4899', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-white shadow-sm transition hover:scale-105" style="background-color: #EC4899;">Pink</button>
+                        <button onclick="setAccentColor('#F59E0B', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-black shadow-sm transition hover:scale-105" style="background-color: #F59E0B;">Amber</button>
+                        <button onclick="setAccentColor('#06B6D4', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-black shadow-sm transition hover:scale-105" style="background-color: #06B6D4;">Cyan</button>
+                        <button onclick="setAccentColor('#10B981', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-black shadow-sm transition hover:scale-105" style="background-color: #10B981;">Emerald</button>
+                        <button onclick="setAccentColor('#EF4444', true)" class="h-9 rounded-xl border border-black/20 flex items-center justify-center font-bold text-[10px] text-white shadow-sm transition hover:scale-105" style="background-color: #EF4444;">Red</button>
+                    </div>
+                </div>
+                <div class="pt-2 border-t border-theme flex justify-between items-center text-[11px] font-mono">
+                    <span class="text-theme-muted">RGB: <span id="accent-rgb-val" class="font-bold text-theme-main">rgb(29, 185, 84)</span></span>
+                    <button onclick="resetAccentColor()" class="px-3 py-1.5 rounded-lg border border-theme hover:border-[var(--accent)] text-theme-main transition font-sans font-semibold">
+                        <i class="fa-solid fa-rotate-left text-xs mr-1"></i> Reset Default
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initAccentColor === 'function') initAccentColor();
+            updateLiveTime();
+        });
+    </script>
+</body>
+
+</html>

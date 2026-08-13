@@ -80,7 +80,7 @@
             --accent-hover: #1ED760;
             --accent-rgb: 29, 185, 84;
             --accent-text: #000000;
-            
+
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --bg-card-hover: #f1f5f9;
@@ -267,7 +267,8 @@
 
     <!-- SPOTIFY AMBIENT GRADIENT OVERLAY -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none">
-        <div class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-[var(--accent)]/20 via-transparent to-transparent">
+        <div
+            class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-[var(--accent)]/20 via-transparent to-transparent">
         </div>
     </div>
 
@@ -284,9 +285,11 @@
                 <h1
                     class="text-sm font-extrabold tracking-wider font-display text-theme-main uppercase flex items-center gap-1.5">
                     Ken Weasley Chenzen
-                    <i class="fa-solid fa-circle-check text-[var(--accent)] text-xs" title="Verified Artist Portfolio"></i>
+                    <i class="fa-solid fa-circle-check text-[var(--accent)] text-xs"
+                        title="Verified Artist Portfolio"></i>
                 </h1>
-                <p class="text-[9px] text-theme-muted tracking-widest uppercase font-semibold">Spotify Web UI • Portofolio
+                <p class="text-[9px] text-theme-muted tracking-widest uppercase font-semibold">Spotify Web UI •
+                    Portofolio
                     & Tugas</p>
             </div>
         </div>
@@ -322,14 +325,17 @@
         <!-- Right Side: Theme Switcher, Color Customizer & Social Media -->
         <div class="flex items-center gap-3">
             <!-- Accent Customizer Button -->
-            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-desktop" aria-label="Change accent color" title="Kustomisasi Warna Aksen"
+            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-desktop"
+                aria-label="Change accent color" title="Kustomisasi Warna Aksen"
                 class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-theme bg-theme-card text-theme-main hover:border-[var(--accent)] transition duration-200 text-xs font-mono cursor-pointer shadow-sm">
-                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm inline-block" id="desktop-accent-swatch" style="background-color: var(--accent);"></span>
+                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm inline-block"
+                    id="desktop-accent-swatch" style="background-color: var(--accent);"></span>
                 <span class="text-[11px] font-semibold hidden lg:inline">Aksen</span>
             </button>
 
             <!-- Theme Toggle Button -->
-            <button onclick="toggleTheme()" id="theme-toggle-desktop" aria-label="Toggle dark mode" title="Mode Dark / Light"
+            <button onclick="toggleTheme()" id="theme-toggle-desktop" aria-label="Toggle dark mode"
+                title="Mode Dark / Light"
                 class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-theme bg-theme-card text-[var(--accent)] hover:bg-[var(--accent)]/10 transition duration-200 text-xs font-mono cursor-pointer shadow-sm">
                 <i class="fa-solid fa-moon theme-toggle-icon text-[var(--accent)] text-sm"></i>
                 <span class="theme-toggle-text text-[11px] font-semibold hidden lg:inline">Spotify Dark</span>
@@ -344,7 +350,8 @@
                     <i class="fa-brands fa-tiktok text-sm"></i>
                 </a>
                 <a href="https://www.instagram.com/fotomobilasli/" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-[var(--accent)] transition duration-150 p-1" aria-label="Instagram" title="Instagram">
+                    class="hover:text-[var(--accent)] transition duration-150 p-1" aria-label="Instagram"
+                    title="Instagram">
                     <i class="fa-brands fa-instagram text-sm"></i>
                 </a>
                 <a href="mailto:Kenweasley10@gmail.com" class="hover:text-[var(--accent)] transition duration-150 p-1"
@@ -359,7 +366,8 @@
     <header
         class="md:hidden flex items-center justify-between p-4 bg-theme-header border-b border-theme sticky top-0 z-30 backdrop-blur-md transition-colors duration-300">
         <div class="flex items-center gap-2.5">
-            <div class="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center">
+            <div
+                class="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center">
                 <i class="fa-brands fa-spotify text-base"></i>
             </div>
             <div>
@@ -374,13 +382,16 @@
 
         <div class="flex items-center gap-2">
             <!-- Accent Customizer Button Mobile -->
-            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-mobile" aria-label="Change accent color" title="Kustomisasi Warna Aksen"
+            <button onclick="toggleColorCustomizer(event)" id="theme-accent-btn-mobile" aria-label="Change accent color"
+                title="Kustomisasi Warna Aksen"
                 class="p-2 rounded-full bg-theme-card text-theme-main border border-theme text-xs cursor-pointer shadow-sm">
-                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm block" id="mobile-accent-swatch" style="background-color: var(--accent);"></span>
+                <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-sm block" id="mobile-accent-swatch"
+                    style="background-color: var(--accent);"></span>
             </button>
 
             <!-- Theme Toggle Button Mobile -->
-            <button onclick="toggleTheme()" id="theme-toggle-mobile" aria-label="Toggle dark mode" title="Mode Dark / Light"
+            <button onclick="toggleTheme()" id="theme-toggle-mobile" aria-label="Toggle dark mode"
+                title="Mode Dark / Light"
                 class="p-2 rounded-full bg-theme-card text-[var(--accent)] border border-theme text-xs cursor-pointer shadow-sm">
                 <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
@@ -454,8 +465,7 @@
                             <!-- Name with Dynamic Accent Highlight -->
                             <h2
                                 class="text-3xl md:text-4xl font-display font-bold tracking-wider text-theme-main leading-tight uppercase">
-                                Saya <span
-                                    class="text-accent-gradient">Ken
+                                Saya <span class="text-accent-gradient">Ken
                                     Weasley Chenzen</span>
                             </h2>
 
@@ -479,8 +489,7 @@
                                     <span>Lihat Profil</span>
                                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </button>
-                                <a href="informatika.html"
-                                    class="px-5 py-2 deco-btn text-xs uppercase inline-block">
+                                <a href="informatika.html" class="px-5 py-2 deco-btn text-xs uppercase inline-block">
                                     Jelajahi Tugas
                                 </a>
                             </div>
@@ -498,8 +507,7 @@
                                 <!-- Avatar Image Container -->
                                 <div
                                     class="relative w-28 h-28 md:w-36 md:h-36 clip-octagon bg-slate-900 shadow-2xl flex items-center justify-center">
-                                    <img id="dashboard-avatar-img"
-                                        src="c:\Users\asus\OneDrive\Attachments\Screenshot 2025-11-17 065137.png"
+                                    <img id="dashboard-avatar-img" src="WhatsApp Image 2026-08-13 at 3.28.12 PM.jpeg"
                                         alt="Ken Weasley Chenzen Avatar"
                                         class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                                 </div>
@@ -510,7 +518,8 @@
                                     title="Status: Online"></span>
                             </div>
 
-                            <span class="text-[10px] font-mono text-[var(--accent)] tracking-wider">Foto Profil Ken</span>
+                            <span class="text-[10px] font-mono text-[var(--accent)] tracking-wider">Foto Profil
+                                Ken</span>
                         </div>
                     </div>
                 </div>
@@ -636,10 +645,12 @@
                 <!-- MY PLAYLISTS SECTION -->
                 <div class="space-y-4 pt-2">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-extrabold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
+                        <h3
+                            class="text-xs font-extrabold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
                             <i class="fa-solid fa-layer-group text-sm"></i> MY PLAYLISTS
                         </h3>
-                        <span id="playlists-total-count" class="text-[11px] font-mono text-theme-muted font-semibold">0 Playlist</span>
+                        <span id="playlists-total-count" class="text-[11px] font-mono text-theme-muted font-semibold">0
+                            Playlist</span>
                     </div>
 
                     <!-- Playlist Cards Grid (Responsive 1-col on mobile, 2-4 on tablet/desktop) -->
@@ -678,7 +689,8 @@
                                             class="w-1 bg-[var(--accent)] animate-[bounce_0.6s_infinite_200ms] rounded-full h-full"></span>
                                     </span>
                                 </h3>
-                                <p id="playlist-active-desc" class="text-[11px] text-theme-muted font-mono">Lagu MP3 Lokal Project • Auto Playlist
+                                <p id="playlist-active-desc" class="text-[11px] text-theme-muted font-mono">Lagu MP3
+                                    Lokal Project • Auto Playlist
                                 </p>
                             </div>
                         </div>
@@ -777,7 +789,8 @@
                                 <div class="flex items-center gap-3">
                                     <!-- Playback speed dropdown -->
                                     <div class="relative inline-block text-left" id="speed-dropdown-wrapper">
-                                        <button id="btn-speed" onclick="toggleSpeedMenu(event)" aria-label="Playback Speed"
+                                        <button id="btn-speed" onclick="toggleSpeedMenu(event)"
+                                            aria-label="Playback Speed"
                                             class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-theme bg-theme-card hover:bg-theme-card/80 text-xs font-mono text-theme-muted hover:text-theme-main transition cursor-pointer shadow-sm"
                                             title="Kecepatan Pemutaran (Playback Speed)">
                                             <i class="fa-solid fa-gauge-high text-[11px] text-[var(--accent)]"></i>
@@ -787,14 +800,37 @@
 
                                         <div id="speed-menu"
                                             class="hidden absolute bottom-full mb-2 right-0 bg-theme-card border border-theme rounded-xl shadow-2xl p-1.5 z-50 min-w-[110px] text-xs font-mono text-theme-main">
-                                            <div class="px-2.5 py-1 text-[9px] uppercase tracking-wider text-theme-muted border-b border-theme mb-1 font-bold">KECEPATAN</div>
-                                            <button onclick="changeSpeed(0.5)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">0.5× <span id="chk-speed-0.5" class="text-[var(--accent)] font-bold hidden">✓</span></button>
-                                            <button onclick="changeSpeed(0.75)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">0.75× <span id="chk-speed-0.75" class="text-[var(--accent)] font-bold hidden">✓</span></button>
-                                            <button onclick="changeSpeed(1)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1× <span id="chk-speed-1" class="text-[var(--accent)] font-bold">✓</span></button>
-                                            <button onclick="changeSpeed(1.25)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.25× <span id="chk-speed-1.25" class="text-[var(--accent)] font-bold hidden">✓</span></button>
-                                            <button onclick="changeSpeed(1.5)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.5× <span id="chk-speed-1.5" class="text-[var(--accent)] font-bold hidden">✓</span></button>
-                                            <button onclick="changeSpeed(1.75)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.75× <span id="chk-speed-1.75" class="text-[var(--accent)] font-bold hidden">✓</span></button>
-                                            <button onclick="changeSpeed(2)" class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">2× <span id="chk-speed-2" class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <div
+                                                class="px-2.5 py-1 text-[9px] uppercase tracking-wider text-theme-muted border-b border-theme mb-1 font-bold">
+                                                KECEPATAN</div>
+                                            <button onclick="changeSpeed(0.5)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">0.5×
+                                                <span id="chk-speed-0.5"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <button onclick="changeSpeed(0.75)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">0.75×
+                                                <span id="chk-speed-0.75"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <button onclick="changeSpeed(1)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1×
+                                                <span id="chk-speed-1"
+                                                    class="text-[var(--accent)] font-bold">✓</span></button>
+                                            <button onclick="changeSpeed(1.25)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.25×
+                                                <span id="chk-speed-1.25"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <button onclick="changeSpeed(1.5)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.5×
+                                                <span id="chk-speed-1.5"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <button onclick="changeSpeed(1.75)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">1.75×
+                                                <span id="chk-speed-1.75"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
+                                            <button onclick="changeSpeed(2)"
+                                                class="speed-option w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] transition flex justify-between items-center text-theme-muted">2×
+                                                <span id="chk-speed-2"
+                                                    class="text-[var(--accent)] font-bold hidden">✓</span></button>
                                         </div>
                                     </div>
 
@@ -827,192 +863,216 @@
                         <div id="playlist-items-list" class="space-y-2 max-h-64 overflow-y-auto custom-scrollbar pr-1">
                             <!-- Dynamic Playlist Items rendered by JS -->
                         </div>
-                    <!-- SPOTIFY VISITOR PLAYLIST FEATURE SECTION -->
-                    <div id="spotify-visitor-section" class="deco-border bg-theme-card p-6 rounded-2xl border border-theme space-y-6 shadow-lg relative z-10">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-theme pb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-[#1DB954]/10 border border-[#1DB954]/30 flex items-center justify-center text-[#1DB954]">
-                                    <i class="fa-brands fa-spotify text-xl"></i>
+                        <!-- SPOTIFY VISITOR PLAYLIST FEATURE SECTION -->
+                        <div id="spotify-visitor-section"
+                            class="deco-border bg-theme-card p-6 rounded-2xl border border-theme space-y-6 shadow-lg relative z-10">
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-theme pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-[#1DB954]/10 border border-[#1DB954]/30 flex items-center justify-center text-[#1DB954]">
+                                        <i class="fa-brands fa-spotify text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-sm md:text-base font-extrabold text-theme-main font-display uppercase tracking-wider flex items-center gap-2">
+                                            🎵 Tambah Lagu Spotify
+                                        </h3>
+                                        <p class="text-xs text-theme-muted">Koleksi lagu Spotify sementara (session
+                                            visitor playlist).</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="text-sm md:text-base font-extrabold text-theme-main font-display uppercase tracking-wider flex items-center gap-2">
-                                        🎵 Tambah Lagu Spotify
-                                    </h3>
-                                    <p class="text-xs text-theme-muted">Koleksi lagu Spotify sementara (session visitor playlist).</p>
-                                </div>
+                                <span
+                                    class="text-[10px] font-mono text-[var(--accent)] px-3 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 uppercase font-bold self-start sm:self-auto">
+                                    Session Only
+                                </span>
                             </div>
-                            <span class="text-[10px] font-mono text-[var(--accent)] px-3 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 uppercase font-bold self-start sm:self-auto">
-                                Session Only
-                            </span>
-                        </div>
 
-                        <!-- INPUT FORM: Search / Paste Link -->
-                        <div class="space-y-3">
-                            <label class="text-[11px] font-mono text-theme-muted uppercase font-bold tracking-wider block">
-                                <i class="fa-solid fa-magnifying-glass text-[var(--accent)] mr-1"></i> Cari Lagu atau Paste Link Spotify
-                            </label>
-                            <div class="flex flex-col sm:flex-row items-stretch gap-2.5">
-                                <div class="relative flex-1">
-                                    <input type="text" id="spotify-url-input"
-                                           placeholder="Cari lagu: contoh 'Toronto 2014', 'Sunflower', 'Blinding Lights'..."
-                                           class="w-full px-4 py-2.5 bg-theme-card border border-theme rounded-xl text-xs text-theme-main focus:outline-none focus:border-[var(--accent)] transition duration-200 placeholder:text-theme-muted">
-                                </div>
-                                <button onclick="handleSearchOrAddSpotifyTrack()"
+                            <!-- INPUT FORM: Search / Paste Link -->
+                            <div class="space-y-3">
+                                <label
+                                    class="text-[11px] font-mono text-theme-muted uppercase font-bold tracking-wider block">
+                                    <i class="fa-solid fa-magnifying-glass text-[var(--accent)] mr-1"></i> Cari Lagu
+                                    atau Paste Link Spotify
+                                </label>
+                                <div class="flex flex-col sm:flex-row items-stretch gap-2.5">
+                                    <div class="relative flex-1">
+                                        <input type="text" id="spotify-url-input"
+                                            placeholder="Cari lagu: contoh 'Toronto 2014', 'Sunflower', 'Blinding Lights'..."
+                                            class="w-full px-4 py-2.5 bg-theme-card border border-theme rounded-xl text-xs text-theme-main focus:outline-none focus:border-[var(--accent)] transition duration-200 placeholder:text-theme-muted">
+                                    </div>
+                                    <button onclick="handleSearchOrAddSpotifyTrack()"
                                         class="px-5 py-2.5 rounded-xl bg-[var(--accent)] text-[var(--accent-text)] text-xs font-bold font-display hover:scale-105 transition cursor-pointer flex items-center justify-center gap-2 shadow-md shrink-0">
-                                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
-                                    <span>Cari Lagu</span>
-                                </button>
+                                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                                        <span>Cari Lagu</span>
+                                    </button>
+                                </div>
+                                <div id="spotify-add-feedback" class="hidden"></div>
+                                <!-- Search results rendered dynamically by spotify-panel.js -->
+                                <div id="spotify-search-results" class="space-y-2 mt-1"></div>
                             </div>
-                            <div id="spotify-add-feedback" class="hidden"></div>
-                            <!-- Search results rendered dynamically by spotify-panel.js -->
-                            <div id="spotify-search-results" class="space-y-2 mt-1"></div>
-                        </div>
 
-                        <!-- SPOTIFY EMBED PREVIEW -->
-                        <div id="spotify-embed-container" class="transition-all duration-300">
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--accent)]/5 border border-[var(--accent)]/15 text-xs text-theme-muted">
-                                <i class="fa-solid fa-music text-[var(--accent)] text-base"></i>
-                                <span>Pemutar full lagu akan muncul di sini saat kamu memilih atau menambahkan lagu.</span>
+                            <!-- SPOTIFY EMBED PREVIEW -->
+                            <div id="spotify-embed-container" class="transition-all duration-300">
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-[var(--accent)]/5 border border-[var(--accent)]/15 text-xs text-theme-muted">
+                                    <i class="fa-solid fa-music text-[var(--accent)] text-base"></i>
+                                    <span>Pemutar full lagu akan muncul di sini saat kamu memilih atau menambahkan
+                                        lagu.</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- VISITOR SPOTIFY PLAYLIST CONTAINER -->
-                        <div class="space-y-3 pt-2 border-t border-theme">
-                            <div class="flex items-center justify-between">
-                                <h4 class="text-xs font-bold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
-                                    <i class="fa-solid fa-list-check"></i> VISITOR SPOTIFY PLAYLIST
+                            <!-- VISITOR SPOTIFY PLAYLIST CONTAINER -->
+                            <div class="space-y-3 pt-2 border-t border-theme">
+                                <div class="flex items-center justify-between">
+                                    <h4
+                                        class="text-xs font-bold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
+                                        <i class="fa-solid fa-list-check"></i> VISITOR SPOTIFY PLAYLIST
+                                    </h4>
+                                    <span id="visitor-playlist-count" class="text-[10px] font-mono text-theme-muted">0
+                                        lagu</span>
+                                </div>
+
+                                <div id="visitor-playlist-list"
+                                    class="space-y-2.5 max-h-64 overflow-y-auto custom-scrollbar pr-1">
+                                    <!-- Rendered dynamically by spotify-panel.js -->
+                                </div>
+                            </div>
+
+                            <!-- MUSIC FLOW SETTINGS (AFTER PLAYLIST ENDS) -->
+                            <div class="pt-4 border-t border-theme space-y-3">
+                                <h4
+                                    class="text-xs font-bold tracking-widest text-theme-main uppercase font-mono flex items-center gap-2">
+                                    <i class="fa-solid fa-sliders text-[var(--accent)]"></i> Pengaturan Music Flow
                                 </h4>
-                                <span id="visitor-playlist-count" class="text-[10px] font-mono text-theme-muted">0 lagu</span>
-                            </div>
+                                <p class="text-xs text-theme-muted">Pilih alur pemutaran otomatis setelah playlist MP3
+                                    lokal selesai:</p>
 
-                            <div id="visitor-playlist-list" class="space-y-2.5 max-h-64 overflow-y-auto custom-scrollbar pr-1">
-                                <!-- Rendered dynamically by spotify-panel.js -->
-                            </div>
-                        </div>
-
-                        <!-- MUSIC FLOW SETTINGS (AFTER PLAYLIST ENDS) -->
-                        <div class="pt-4 border-t border-theme space-y-3">
-                            <h4 class="text-xs font-bold tracking-widest text-theme-main uppercase font-mono flex items-center gap-2">
-                                <i class="fa-solid fa-sliders text-[var(--accent)]"></i> Pengaturan Music Flow
-                            </h4>
-                            <p class="text-xs text-theme-muted">Pilih alur pemutaran otomatis setelah playlist MP3 lokal selesai:</p>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-semibold">
-                                <button onclick="handleMusicFlowModeChange('stop')" data-flow-mode="stop"
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-semibold">
+                                    <button onclick="handleMusicFlowModeChange('stop')" data-flow-mode="stop"
                                         class="music-flow-mode-btn p-3 rounded-xl border border-theme text-theme-muted hover:border-[var(--accent)] transition cursor-pointer text-left space-y-1">
-                                    <div class="font-bold font-display text-xs">⏹ Stop Musik</div>
-                                    <div class="text-[10px] text-theme-muted font-normal">Hentikan pemutaran otomatis.</div>
-                                </button>
-                                <button onclick="handleMusicFlowModeChange('random')" data-flow-mode="random"
+                                        <div class="font-bold font-display text-xs">⏹ Stop Musik</div>
+                                        <div class="text-[10px] text-theme-muted font-normal">Hentikan pemutaran
+                                            otomatis.</div>
+                                    </button>
+                                    <button onclick="handleMusicFlowModeChange('random')" data-flow-mode="random"
                                         class="music-flow-mode-btn p-3 rounded-xl border border-theme text-theme-muted hover:border-[var(--accent)] transition cursor-pointer text-left space-y-1">
-                                    <div class="font-bold font-display text-xs">🎲 Random Spotify</div>
-                                    <div class="text-[10px] text-theme-muted font-normal">Tampilkan 1 lagu acak dari Visitor Spotify.</div>
-                                </button>
-                                <button onclick="handleMusicFlowModeChange('playlist')" data-flow-mode="playlist"
+                                        <div class="font-bold font-display text-xs">🎲 Random Spotify</div>
+                                        <div class="text-[10px] text-theme-muted font-normal">Tampilkan 1 lagu acak dari
+                                            Visitor Spotify.</div>
+                                    </button>
+                                    <button onclick="handleMusicFlowModeChange('playlist')" data-flow-mode="playlist"
                                         class="music-flow-mode-btn p-3 rounded-xl border border-theme text-theme-muted hover:border-[var(--accent)] transition cursor-pointer text-left space-y-1">
-                                    <div class="font-bold font-display text-xs">📜 Visitor Playlist</div>
-                                    <div class="text-[10px] text-theme-muted font-normal">Urutkan pemutaran lagu Visitor Spotify.</div>
-                                </button>
-                            </div>
+                                        <div class="font-bold font-display text-xs">📜 Visitor Playlist</div>
+                                        <div class="text-[10px] text-theme-muted font-normal">Urutkan pemutaran lagu
+                                            Visitor Spotify.</div>
+                                    </button>
+                                </div>
 
-                            <div class="flex items-center justify-between gap-4 pt-2">
-                                <label for="transition-delay-select" class="text-xs text-theme-muted font-mono">Jeda Transisi (Transition Delay):</label>
-                                <select id="transition-delay-select" onchange="handleTransitionDelayChange(this.value)"
+                                <div class="flex items-center justify-between gap-4 pt-2">
+                                    <label for="transition-delay-select" class="text-xs text-theme-muted font-mono">Jeda
+                                        Transisi (Transition Delay):</label>
+                                    <select id="transition-delay-select"
+                                        onchange="handleTransitionDelayChange(this.value)"
                                         class="px-3 py-1.5 bg-theme-card border border-theme rounded-lg text-xs font-mono text-theme-main focus:outline-none focus:border-[var(--accent)] cursor-pointer">
-                                    <option value="0">0 Detik (Langsung)</option>
-                                    <option value="1000">1 Detik</option>
-                                    <option value="2000" selected>2 Detik (Default)</option>
-                                    <option value="3000">3 Detik</option>
-                                    <option value="5000">5 Detik</option>
-                                </select>
-                            </div>
+                                        <option value="0">0 Detik (Langsung)</option>
+                                        <option value="1000">1 Detik</option>
+                                        <option value="2000" selected>2 Detik (Default)</option>
+                                        <option value="3000">3 Detik</option>
+                                        <option value="5000">5 Detik</option>
+                                    </select>
+                                </div>
 
-                            <!-- Spotify Next Track Card Container -->
-                            <div id="spotify-next-track-container" class="hidden pt-2"></div>
-                        </div>
-                    </div>
-
-                    <!-- Education & Skills Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Education Timeline -->
-                    <div class="space-y-6">
-                        <h3
-                            class="text-xs font-bold tracking-widest text-gold-600 dark:text-gold-500 uppercase font-mono flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan
-                        </h3>
-                        <div class="space-y-6 border-l-2 border-gold-500/30 pl-6 ml-2">
-                            <div class="relative space-y-1">
-                                <span
-                                    class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.6)]"></span>
-                                <h4 class="text-sm font-bold text-theme-main">SMP Sekolah Cinta Kasih Tzu Chi</h4>
-                                <span class="text-xs font-mono text-[var(--accent)]">2023 - 2025</span>
-                                <p class="text-xs text-theme-muted mt-1">Lulus dan melanjutkan pendidikan SMA pada
-                                    sekolah yang sama.</p>
-                            </div>
-                            <div class="relative space-y-1">
-                                <span
-                                    class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.6)]"></span>
-                                <h4 class="text-sm font-bold text-theme-main">SMA Cinta Kasih Tzu Chi Jakarta</h4>
-                                <span class="text-xs font-mono text-[var(--accent)]">2026 - Sekarang</span>
-                                <p class="text-xs text-theme-muted mt-1">Sedang menempuh pendidikan di kelas 11.3.</p>
+                                <!-- Spotify Next Track Card Container -->
+                                <div id="spotify-next-track-container" class="hidden pt-2"></div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Skills & Tools -->
-                    <div class="space-y-6">
-                        <h3
-                            class="text-xs font-bold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
-                            <i class="fa-solid fa-sliders"></i> Kemampuan & Kompetensi
-                        </h3>
-                        <div class="space-y-4">
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-medium">
-                                    <span class="text-theme-main">HTML & CSS (Tailwind)</span>
-                                    <span class="text-[var(--accent)] font-mono">40%</span>
-                                </div>
-                                <div
-                                    class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
-                                    <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
-                                        style="width: 40%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-medium">
-                                    <span class="text-theme-main">Javascript & Node.js</span>
-                                    <span class="text-[var(--accent)] font-mono">25%</span>
-                                </div>
-                                <div
-                                    class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
-                                    <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
-                                        style="width: 25%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-medium">
-                                    <span class="text-theme-main">Konsep Jaringan LAN</span>
-                                    <span class="text-[var(--accent)] font-mono">45%</span>
-                                </div>
-                                <div
-                                    class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
-                                    <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
-                                        style="width: 45%"></div>
+                        <!-- Education & Skills Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Education Timeline -->
+                            <div class="space-y-6">
+                                <h3
+                                    class="text-xs font-bold tracking-widest text-gold-600 dark:text-gold-500 uppercase font-mono flex items-center gap-2">
+                                    <i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan
+                                </h3>
+                                <div class="space-y-6 border-l-2 border-gold-500/30 pl-6 ml-2">
+                                    <div class="relative space-y-1">
+                                        <span
+                                            class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.6)]"></span>
+                                        <h4 class="text-sm font-bold text-theme-main">SMP Sekolah Cinta Kasih Tzu Chi
+                                        </h4>
+                                        <span class="text-xs font-mono text-[var(--accent)]">2023 - 2025</span>
+                                        <p class="text-xs text-theme-muted mt-1">Lulus dan melanjutkan pendidikan SMA
+                                            pada
+                                            sekolah yang sama.</p>
+                                    </div>
+                                    <div class="relative space-y-1">
+                                        <span
+                                            class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.6)]"></span>
+                                        <h4 class="text-sm font-bold text-theme-main">SMA Cinta Kasih Tzu Chi Jakarta
+                                        </h4>
+                                        <span class="text-xs font-mono text-[var(--accent)]">2026 - Sekarang</span>
+                                        <p class="text-xs text-theme-muted mt-1">Sedang menempuh pendidikan di kelas
+                                            11.3.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-medium">
-                                    <span class="text-theme-main">Kepenulisan Esai & Resensi</span>
-                                    <span class="text-[var(--accent)] font-mono">75%</span>
-                                </div>
-                                <div
-                                    class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
-                                    <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
-                                        style="width: 75%"></div>
+
+                            <!-- Skills & Tools -->
+                            <div class="space-y-6">
+                                <h3
+                                    class="text-xs font-bold tracking-widest text-[var(--accent)] uppercase font-mono flex items-center gap-2">
+                                    <i class="fa-solid fa-sliders"></i> Kemampuan & Kompetensi
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-medium">
+                                            <span class="text-theme-main">HTML & CSS (Tailwind)</span>
+                                            <span class="text-[var(--accent)] font-mono">40%</span>
+                                        </div>
+                                        <div
+                                            class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
+                                            <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
+                                                style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-medium">
+                                            <span class="text-theme-main">Javascript & Node.js</span>
+                                            <span class="text-[var(--accent)] font-mono">25%</span>
+                                        </div>
+                                        <div
+                                            class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
+                                            <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
+                                                style="width: 25%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-medium">
+                                            <span class="text-theme-main">Konsep Jaringan LAN</span>
+                                            <span class="text-[var(--accent)] font-mono">45%</span>
+                                        </div>
+                                        <div
+                                            class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
+                                            <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
+                                                style="width: 45%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-medium">
+                                            <span class="text-theme-main">Kepenulisan Esai & Resensi</span>
+                                            <span class="text-[var(--accent)] font-mono">75%</span>
+                                        </div>
+                                        <div
+                                            class="w-full h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden">
+                                            <div class="h-full bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]"
+                                                style="width: 75%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </section>
 
             <!-- SECTION 5: JADWAL SEKOLAH -->
@@ -1200,11 +1260,13 @@
                 <div class="relative deco-border bg-theme-card p-6 md:p-8 overflow-hidden shadow-lg">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
                         <div class="space-y-2">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-[11px] font-mono tracking-wide">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-[11px] font-mono tracking-wide">
                                 <i class="fa-solid fa-gamepad animate-pulse"></i>
                                 Arcade & Mini Games
                             </div>
-                            <h2 class="text-2xl md:text-3xl font-display font-bold tracking-wider text-theme-main uppercase">
+                            <h2
+                                class="text-2xl md:text-3xl font-display font-bold tracking-wider text-theme-main uppercase">
                                 Mini Games Hub
                             </h2>
                             <p class="text-xs text-theme-muted">
@@ -1212,7 +1274,8 @@
                             </p>
                         </div>
                         <div id="games-active-badge" class="hidden md:flex items-center gap-2">
-                            <button onclick="showGamesMenu()" class="px-4 py-2 rounded-full border border-theme bg-theme-card hover:border-[var(--accent)] text-theme-main text-xs font-mono font-bold transition flex items-center gap-2 cursor-pointer shadow-sm">
+                            <button onclick="showGamesMenu()"
+                                class="px-4 py-2 rounded-full border border-theme bg-theme-card hover:border-[var(--accent)] text-theme-main text-xs font-mono font-bold transition flex items-center gap-2 cursor-pointer shadow-sm">
                                 <i class="fa-solid fa-arrow-left text-[10px]"></i> Menu Games
                             </button>
                         </div>
@@ -1222,68 +1285,85 @@
                 <!-- MENU VIEW (CARDS SELECTION) -->
                 <div id="games-menu-view" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                        
+
                         <!-- Game Card 1: Snake -->
-                        <div class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
+                        <div
+                            class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
                             <div class="space-y-3">
-                                <div class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
                                     🐍
                                 </div>
                                 <h3 class="text-lg font-bold text-theme-main font-display">Classic Snake</h3>
                                 <p class="text-xs text-theme-muted leading-relaxed">
-                                    Kendalikan ular memakan makanan. Hati-hati jangan menabrak dinding atau tubuh sendiri!
+                                    Kendalikan ular memakan makanan. Hati-hati jangan menabrak dinding atau tubuh
+                                    sendiri!
                                 </p>
                             </div>
                             <div class="pt-2 border-t border-theme flex items-center justify-between">
-                                <span id="high-score-snake-card" class="text-[10px] font-mono text-theme-muted font-bold">BEST: 0</span>
-                                <button onclick="launchGame('snake')" class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
+                                <span id="high-score-snake-card"
+                                    class="text-[10px] font-mono text-theme-muted font-bold">BEST: 0</span>
+                                <button onclick="launchGame('snake')"
+                                    class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
                                     PLAY
                                 </button>
                             </div>
                         </div>
 
                         <!-- Game Card 2: Memory -->
-                        <div class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
+                        <div
+                            class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
                             <div class="space-y-3">
-                                <div class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
                                     🧠
                                 </div>
                                 <h3 class="text-lg font-bold text-theme-main font-display">Memory Cards</h3>
                                 <p class="text-xs text-theme-muted leading-relaxed">
-                                    Uji daya ingat kamu! Balikkan kartu dan temukan pasangan gambar yang sama dengan sedikit langkah.
+                                    Uji daya ingat kamu! Balikkan kartu dan temukan pasangan gambar yang sama dengan
+                                    sedikit langkah.
                                 </p>
                             </div>
                             <div class="pt-2 border-t border-theme flex items-center justify-between">
-                                <span id="best-memory-card" class="text-[10px] font-mono text-theme-muted font-bold">BEST: -</span>
-                                <button onclick="launchGame('memory')" class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
+                                <span id="best-memory-card"
+                                    class="text-[10px] font-mono text-theme-muted font-bold">BEST: -</span>
+                                <button onclick="launchGame('memory')"
+                                    class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
                                     PLAY
                                 </button>
                             </div>
                         </div>
 
                         <!-- Game Card 3: Reaction Test -->
-                        <div class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
+                        <div
+                            class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
                             <div class="space-y-3">
-                                <div class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
                                     ⚡
                                 </div>
                                 <h3 class="text-lg font-bold text-theme-main font-display">Reaction Test</h3>
                                 <p class="text-xs text-theme-muted leading-relaxed">
-                                    Uji kecepatan refleks saraf kamu dalam milidetik saat sinyal warna berubah jadi HIJAU!
+                                    Uji kecepatan refleks saraf kamu dalam milidetik saat sinyal warna berubah jadi
+                                    HIJAU!
                                 </p>
                             </div>
                             <div class="pt-2 border-t border-theme flex items-center justify-between">
-                                <span id="best-reaction-card" class="text-[10px] font-mono text-theme-muted font-bold">BEST: - ms</span>
-                                <button onclick="launchGame('reaction')" class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
+                                <span id="best-reaction-card"
+                                    class="text-[10px] font-mono text-theme-muted font-bold">BEST: - ms</span>
+                                <button onclick="launchGame('reaction')"
+                                    class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
                                     PLAY
                                 </button>
                             </div>
                         </div>
 
                         <!-- Game Card 4: 2048 -->
-                        <div class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
+                        <div
+                            class="deco-card border border-theme rounded-2xl p-6 bg-theme-card flex flex-col justify-between space-y-5 hover-neon">
                             <div class="space-y-3">
-                                <div class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] text-2xl shadow-sm">
                                     🔢
                                 </div>
                                 <h3 class="text-lg font-bold text-theme-main font-display">2048 Puzzle</h3>
@@ -1292,8 +1372,10 @@
                                 </p>
                             </div>
                             <div class="pt-2 border-t border-theme flex items-center justify-between">
-                                <span id="high-score-2048-card" class="text-[10px] font-mono text-theme-muted font-bold">BEST: 0</span>
-                                <button onclick="launchGame('2048')" class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
+                                <span id="high-score-2048-card"
+                                    class="text-[10px] font-mono text-theme-muted font-bold">BEST: 0</span>
+                                <button onclick="launchGame('2048')"
+                                    class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-extrabold text-xs hover:scale-105 transition cursor-pointer shadow-md">
                                     PLAY
                                 </button>
                             </div>
@@ -1303,12 +1385,16 @@
                 </div>
 
                 <!-- GAME STAGE CONTAINER -->
-                <div id="game-stage-view" class="hidden border border-theme rounded-2xl bg-theme-card p-4 sm:p-6 shadow-xl relative min-h-[400px]">
+                <div id="game-stage-view"
+                    class="hidden border border-theme rounded-2xl bg-theme-card p-4 sm:p-6 shadow-xl relative min-h-[400px]">
                     <div class="flex items-center justify-between border-b border-theme pb-4 mb-6">
-                        <button onclick="showGamesMenu()" class="px-3.5 py-1.5 rounded-full border border-theme bg-theme-card hover:bg-theme-card-hover text-theme-main text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer">
+                        <button onclick="showGamesMenu()"
+                            class="px-3.5 py-1.5 rounded-full border border-theme bg-theme-card hover:bg-theme-card-hover text-theme-main text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer">
                             <i class="fa-solid fa-arrow-left text-[10px]"></i> Menu Games
                         </button>
-                        <h3 id="active-game-title" class="text-base font-extrabold text-theme-main font-display uppercase tracking-wider">Snake</h3>
+                        <h3 id="active-game-title"
+                            class="text-base font-extrabold text-theme-main font-display uppercase tracking-wider">Snake
+                        </h3>
                         <div class="flex items-center gap-3 text-xs font-mono">
                             <span id="game-score-display" class="text-[var(--accent)] font-bold">SCORE: 0</span>
                             <span id="game-best-display" class="text-theme-muted">BEST: 0</span>
@@ -1318,12 +1404,15 @@
                     <!-- Individual Game Views -->
                     <div id="snake-stage" class="hidden flex flex-col items-center gap-4">
                         <div class="relative">
-                            <canvas id="snake-canvas" width="360" height="360" class="border-2 border-theme rounded-2xl bg-theme-card shadow-inner max-w-full"></canvas>
+                            <canvas id="snake-canvas" width="360" height="360"
+                                class="border-2 border-theme rounded-2xl bg-theme-card shadow-inner max-w-full"></canvas>
                             <!-- Game Over Overlay -->
-                            <div id="snake-gameover" class="hidden absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center gap-3 text-white p-4">
+                            <div id="snake-gameover"
+                                class="hidden absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center gap-3 text-white p-4">
                                 <h4 class="text-xl font-extrabold text-red-400 font-display">GAME OVER!</h4>
                                 <p id="snake-final-score" class="text-sm font-mono">Skor Akhir: 0</p>
-                                <button onclick="startSnakeGame()" class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition cursor-pointer mt-2 shadow-lg">
+                                <button onclick="startSnakeGame()"
+                                    class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition cursor-pointer mt-2 shadow-lg">
                                     Coba Lagi 🔄
                                 </button>
                             </div>
@@ -1331,17 +1420,25 @@
 
                         <!-- Mobile D-Pad Touch Controls -->
                         <div class="flex flex-col items-center gap-1.5 pt-2 md:hidden">
-                            <button onclick="handleSnakeTouchDir('UP')" aria-label="Up" class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▲</button>
+                            <button onclick="handleSnakeTouchDir('UP')" aria-label="Up"
+                                class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▲</button>
                             <div class="flex gap-4">
-                                <button onclick="handleSnakeTouchDir('LEFT')" aria-label="Left" class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">◀</button>
-                                <button onclick="handleSnakeTouchDir('DOWN')" aria-label="Down" class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▼</button>
-                                <button onclick="handleSnakeTouchDir('RIGHT')" aria-label="Right" class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▶</button>
+                                <button onclick="handleSnakeTouchDir('LEFT')" aria-label="Left"
+                                    class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">◀</button>
+                                <button onclick="handleSnakeTouchDir('DOWN')" aria-label="Down"
+                                    class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▼</button>
+                                <button onclick="handleSnakeTouchDir('RIGHT')" aria-label="Right"
+                                    class="w-12 h-10 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-sm font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▶</button>
                             </div>
                         </div>
 
                         <div class="flex gap-3 pt-2">
-                            <button onclick="toggleSnakePause()" id="btn-snake-pause" class="px-4 py-1.5 rounded-full border border-theme bg-theme-card text-theme-main text-xs font-mono font-bold hover:border-[var(--accent)] transition">Jeda ⏸</button>
-                            <button onclick="startSnakeGame()" class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] text-xs font-mono font-bold hover:scale-105 transition shadow-sm">Restart 🔄</button>
+                            <button onclick="toggleSnakePause()" id="btn-snake-pause"
+                                class="px-4 py-1.5 rounded-full border border-theme bg-theme-card text-theme-main text-xs font-mono font-bold hover:border-[var(--accent)] transition">Jeda
+                                ⏸</button>
+                            <button onclick="startSnakeGame()"
+                                class="px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] text-xs font-mono font-bold hover:scale-105 transition shadow-sm">Restart
+                                🔄</button>
                         </div>
                     </div>
 
@@ -1350,40 +1447,50 @@
                             <span>Langkah: <strong id="memory-moves" class="text-theme-main">0</strong></span>
                             <span>Waktu: <strong id="memory-timer" class="text-theme-main">00:00</strong></span>
                         </div>
-                        
+
                         <div id="memory-grid" class="grid grid-cols-4 gap-3 max-w-md w-full">
                             <!-- Memory cards injected by JS -->
                         </div>
 
-                        <button onclick="startMemoryGame()" class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition shadow-md mt-2">
+                        <button onclick="startMemoryGame()"
+                            class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition shadow-md mt-2">
                             Mulai Ulang 🔄
                         </button>
                     </div>
 
                     <div id="reaction-stage" class="hidden flex flex-col items-center justify-center min-h-[300px]">
-                        <div id="reaction-box" onclick="handleReactionClick()" class="w-full max-w-lg h-64 rounded-2xl border-2 border-theme bg-theme-card flex flex-col items-center justify-center p-6 text-center cursor-pointer transition-colors duration-200 select-none shadow-inner">
+                        <div id="reaction-box" onclick="handleReactionClick()"
+                            class="w-full max-w-lg h-64 rounded-2xl border-2 border-theme bg-theme-card flex flex-col items-center justify-center p-6 text-center cursor-pointer transition-colors duration-200 select-none shadow-inner">
                             <div id="reaction-icon" class="text-4xl mb-3 text-[var(--accent)]">⚡</div>
-                            <h4 id="reaction-prompt" class="text-lg font-extrabold text-theme-main font-display">Klik untuk Mulai!</h4>
-                            <p id="reaction-sub" class="text-xs text-theme-muted mt-2">Uji seberapa cepat reaksi kamu saat layar berubah jadi HIJAU.</p>
+                            <h4 id="reaction-prompt" class="text-lg font-extrabold text-theme-main font-display">Klik
+                                untuk Mulai!</h4>
+                            <p id="reaction-sub" class="text-xs text-theme-muted mt-2">Uji seberapa cepat reaksi kamu
+                                saat layar berubah jadi HIJAU.</p>
                         </div>
                     </div>
 
                     <div id="2048-stage" class="hidden flex flex-col items-center gap-4">
-                        <div id="2048-board" class="grid grid-cols-4 gap-2.5 p-3 rounded-2xl bg-theme-card border-2 border-theme w-72 h-72 sm:w-80 sm:h-80 select-none touch-none shadow-inner">
+                        <div id="2048-board"
+                            class="grid grid-cols-4 gap-2.5 p-3 rounded-2xl bg-theme-card border-2 border-theme w-72 h-72 sm:w-80 sm:h-80 select-none touch-none shadow-inner">
                             <!-- 16 tiles injected by JS -->
                         </div>
 
                         <!-- Mobile Direction Backup Buttons -->
                         <div class="flex flex-col items-center gap-1.5 pt-2 sm:hidden">
-                            <button onclick="move2048('UP')" aria-label="Up" class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▲</button>
+                            <button onclick="move2048('UP')" aria-label="Up"
+                                class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▲</button>
                             <div class="flex gap-4">
-                                <button onclick="move2048('LEFT')" aria-label="Left" class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">◀</button>
-                                <button onclick="move2048('DOWN')" aria-label="Down" class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▼</button>
-                                <button onclick="move2048('RIGHT')" aria-label="Right" class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▶</button>
+                                <button onclick="move2048('LEFT')" aria-label="Left"
+                                    class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">◀</button>
+                                <button onclick="move2048('DOWN')" aria-label="Down"
+                                    class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▼</button>
+                                <button onclick="move2048('RIGHT')" aria-label="Right"
+                                    class="w-12 h-9 rounded-lg border border-theme bg-theme-card text-theme-main flex items-center justify-center text-xs font-bold active:bg-[var(--accent)] active:text-[var(--accent-text)]">▶</button>
                             </div>
                         </div>
 
-                        <button onclick="start2048Game()" class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition shadow-md">
+                        <button onclick="start2048Game()"
+                            class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition shadow-md">
                             Main Lagi 🔄
                         </button>
                     </div>
@@ -1413,8 +1520,7 @@
                 class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-theme-card border border-theme flex items-center justify-center relative overflow-hidden group shrink-0 cursor-pointer"
                 title="Buka Pemutar Musik Profil">
                 <img id="bottom-cover-img" src="Screenshot 2026-03-07 214405.png" alt="Track Cover"
-                    onerror="this.src='Screenshot 2026-03-07 214405.png'"
-                    class="w-full h-full object-cover">
+                    onerror="this.src='Screenshot 2026-03-07 214405.png'" class="w-full h-full object-cover">
                 <div
                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
                     <i class="fa-solid fa-expand text-white text-xs"></i>
@@ -1422,7 +1528,8 @@
             </div>
             <div class="truncate">
                 <h5 id="bottom-track-title" onclick="switchTab('profil')"
-                    class="text-xs font-bold text-theme-main hover:underline cursor-pointer truncate font-display">Memuat
+                    class="text-xs font-bold text-theme-main hover:underline cursor-pointer truncate font-display">
+                    Memuat
                     Lagu...</h5>
                 <p id="bottom-track-artist" onclick="switchTab('profil')"
                     class="text-[11px] text-theme-muted hover:underline cursor-pointer truncate">Memuat Artis...</p>
@@ -1439,17 +1546,19 @@
                 <button id="bottom-btn-shuffle" onclick="toggleShuffle()" aria-label="Shuffle mode"
                     class="hover:text-theme-main transition text-xs cursor-pointer" title="Shuffle"><i
                         class="fa-solid fa-shuffle"></i></button>
-                <button onclick="playPrevTrack()" aria-label="Previous track" class="hover:text-theme-main transition text-sm cursor-pointer"
-                    title="Sebelumnya"><i class="fa-solid fa-backward-step"></i></button>
+                <button onclick="playPrevTrack()" aria-label="Previous track"
+                    class="hover:text-theme-main transition text-sm cursor-pointer" title="Sebelumnya"><i
+                        class="fa-solid fa-backward-step"></i></button>
                 <button onclick="togglePlayPause()" aria-label="Play or Pause"
                     class="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-text)] flex items-center justify-center transition hover:scale-105 shadow-md cursor-pointer">
                     <i class="fa-solid fa-play text-xs translate-x-0.5" id="bottom-play-icon"></i>
                 </button>
-                <button onclick="playNextTrack()" aria-label="Next track" class="hover:text-theme-main transition text-sm cursor-pointer"
-                    title="Selanjutnya"><i class="fa-solid fa-forward-step"></i></button>
+                <button onclick="playNextTrack()" aria-label="Next track"
+                    class="hover:text-theme-main transition text-sm cursor-pointer" title="Selanjutnya"><i
+                        class="fa-solid fa-forward-step"></i></button>
                 <button id="bottom-btn-repeat" onclick="toggleRepeat()" aria-label="Repeat mode"
-                    class="hover:text-theme-main transition text-xs cursor-pointer" title="Repeat"><i id="bottom-repeat-icon"
-                        class="fa-solid fa-repeat"></i></button>
+                    class="hover:text-theme-main transition text-xs cursor-pointer" title="Repeat"><i
+                        id="bottom-repeat-icon" class="fa-solid fa-repeat"></i></button>
             </div>
             <!-- Progress Line -->
             <div class="w-full flex items-center gap-2 text-[10px] font-mono text-theme-muted">
@@ -1466,16 +1575,17 @@
 
         <!-- Right: Volume, Extra Controls & Close Button -->
         <div class="flex items-center justify-end gap-2.5 text-theme-muted w-1/4">
-            <button onclick="switchTab('profil')" class="hover:text-theme-main transition cursor-pointer hidden md:block"
-                title="Daftar Playlist Profil" aria-label="View playlist"><i class="fa-solid fa-list-ul text-xs"></i></button>
+            <button onclick="switchTab('profil')"
+                class="hover:text-theme-main transition cursor-pointer hidden md:block" title="Daftar Playlist Profil"
+                aria-label="View playlist"><i class="fa-solid fa-list-ul text-xs"></i></button>
             <div class="hidden lg:flex items-center gap-2">
-                <button onclick="toggleMute()" class="hover:text-theme-main transition cursor-pointer" title="Mute/Unmute" aria-label="Mute">
+                <button onclick="toggleMute()" class="hover:text-theme-main transition cursor-pointer"
+                    title="Mute/Unmute" aria-label="Mute">
                     <i id="bottom-volume-icon" class="fa-solid fa-volume-high text-xs"></i>
                 </button>
                 <div class="w-16 h-1.5 bg-theme-card border border-theme rounded-full overflow-hidden cursor-pointer group relative"
                     onclick="seekBottomVolume(event)">
-                    <div id="bottom-volume-slider"
-                        class="h-full bg-[var(--accent)] rounded-full w-[80%]"></div>
+                    <div id="bottom-volume-slider" class="h-full bg-[var(--accent)] rounded-full w-[80%]"></div>
                 </div>
             </div>
             <!-- Close Button X -->
@@ -1487,42 +1597,68 @@
     </div>
 
     <!-- FLOATING REOPEN MUSIC BUTTON -->
-    <button id="floating-music-btn" onclick="openBottomPlayer()" aria-label="Open music player" title="Buka Pemutar Musik"
+    <button id="floating-music-btn" onclick="openBottomPlayer()" aria-label="Open music player"
+        title="Buka Pemutar Musik"
         class="hidden fixed bottom-16 right-4 md:bottom-6 md:right-6 z-50 w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--accent-text)] items-center justify-center shadow-[0_4px_20px_rgba(var(--accent-rgb),0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer group">
         <i class="fa-solid fa-music text-base group-hover:rotate-12 transition-transform"></i>
     </button>
 
     <!-- ACCENT COLOR CUSTOMIZER MODAL -->
-    <div id="color-customizer-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="relative bg-theme-card max-w-md w-full rounded-2xl overflow-hidden border border-theme shadow-2xl flex flex-col animate-fade-in p-6 space-y-5">
+    <div id="color-customizer-modal"
+        class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div
+            class="relative bg-theme-card max-w-md w-full rounded-2xl overflow-hidden border border-theme shadow-2xl flex flex-col animate-fade-in p-6 space-y-5">
             <div class="flex justify-between items-center border-b border-theme pb-3">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-5 h-5 rounded-full border border-black/20 shadow-md inline-block" id="modal-accent-swatch" style="background-color: var(--accent);"></span>
-                    <h3 class="text-base font-extrabold text-theme-main font-display uppercase tracking-wider">Kustom Warna Aksen</h3>
+                    <span class="w-5 h-5 rounded-full border border-black/20 shadow-md inline-block"
+                        id="modal-accent-swatch" style="background-color: var(--accent);"></span>
+                    <h3 class="text-base font-extrabold text-theme-main font-display uppercase tracking-wider">Kustom
+                        Warna Aksen</h3>
                 </div>
-                <button onclick="closeColorCustomizer()" aria-label="Close color customizer" class="text-theme-muted hover:text-theme-main p-1 rounded-full transition cursor-pointer">
+                <button onclick="closeColorCustomizer()" aria-label="Close color customizer"
+                    class="text-theme-muted hover:text-theme-main p-1 rounded-full transition cursor-pointer">
                     <i class="fa-solid fa-xmark text-base"></i>
                 </button>
             </div>
 
-            <p class="text-xs text-theme-muted">Pilih warna aksen favorit kamu. Warna aksen akan mengubah tombol, indikator aktif, pemutar musik, dan visual mini games.</p>
+            <p class="text-xs text-theme-muted">Pilih warna aksen favorit kamu. Warna aksen akan mengubah tombol,
+                indikator aktif, pemutar musik, dan visual mini games.</p>
 
             <!-- Native Color Picker & Quick Swatches -->
             <div class="space-y-3">
-                <label class="text-[10px] uppercase font-mono tracking-widest text-theme-muted font-bold block">Roda Warna & Preset</label>
-                
+                <label class="text-[10px] uppercase font-mono tracking-widest text-theme-muted font-bold block">Roda
+                    Warna & Preset</label>
+
                 <div class="flex items-center gap-3">
-                    <input type="color" id="accent-color-picker" value="#1DB954" aria-label="Pick color" onchange="setAccentColor(this.value)" oninput="setAccentColor(this.value)" class="w-12 h-12 rounded-xl border-2 border-theme cursor-pointer bg-transparent p-0.5 shadow-md">
-                    
+                    <input type="color" id="accent-color-picker" value="#1DB954" aria-label="Pick color"
+                        onchange="setAccentColor(this.value)" oninput="setAccentColor(this.value)"
+                        class="w-12 h-12 rounded-xl border-2 border-theme cursor-pointer bg-transparent p-0.5 shadow-md">
+
                     <div class="flex-1 grid grid-cols-4 sm:grid-cols-8 gap-2">
-                        <button onclick="setAccentColor('#1DB954')" title="Spotify Green (Default)" class="w-7 h-7 rounded-full bg-[#1DB954] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Green"></button>
-                        <button onclick="setAccentColor('#3B82F6')" title="Electric Blue" class="w-7 h-7 rounded-full bg-[#3B82F6] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Blue"></button>
-                        <button onclick="setAccentColor('#8B5CF6')" title="Neon Purple" class="w-7 h-7 rounded-full bg-[#8B5CF6] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Purple"></button>
-                        <button onclick="setAccentColor('#EF4444')" title="Crimson Red" class="w-7 h-7 rounded-full bg-[#EF4444] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Red"></button>
-                        <button onclick="setAccentColor('#F97316')" title="Sunset Orange" class="w-7 h-7 rounded-full bg-[#F97316] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Orange"></button>
-                        <button onclick="setAccentColor('#EC4899')" title="Rose Pink" class="w-7 h-7 rounded-full bg-[#EC4899] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Pink"></button>
-                        <button onclick="setAccentColor('#F59E0B')" title="Sun Gold" class="w-7 h-7 rounded-full bg-[#F59E0B] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Gold"></button>
-                        <button onclick="setAccentColor('#06B6D4')" title="Cyan Teal" class="w-7 h-7 rounded-full bg-[#06B6D4] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm" aria-label="Teal"></button>
+                        <button onclick="setAccentColor('#1DB954')" title="Spotify Green (Default)"
+                            class="w-7 h-7 rounded-full bg-[#1DB954] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Green"></button>
+                        <button onclick="setAccentColor('#3B82F6')" title="Electric Blue"
+                            class="w-7 h-7 rounded-full bg-[#3B82F6] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Blue"></button>
+                        <button onclick="setAccentColor('#8B5CF6')" title="Neon Purple"
+                            class="w-7 h-7 rounded-full bg-[#8B5CF6] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Purple"></button>
+                        <button onclick="setAccentColor('#EF4444')" title="Crimson Red"
+                            class="w-7 h-7 rounded-full bg-[#EF4444] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Red"></button>
+                        <button onclick="setAccentColor('#F97316')" title="Sunset Orange"
+                            class="w-7 h-7 rounded-full bg-[#F97316] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Orange"></button>
+                        <button onclick="setAccentColor('#EC4899')" title="Rose Pink"
+                            class="w-7 h-7 rounded-full bg-[#EC4899] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Pink"></button>
+                        <button onclick="setAccentColor('#F59E0B')" title="Sun Gold"
+                            class="w-7 h-7 rounded-full bg-[#F59E0B] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Gold"></button>
+                        <button onclick="setAccentColor('#06B6D4')" title="Cyan Teal"
+                            class="w-7 h-7 rounded-full bg-[#06B6D4] border-2 border-white/20 hover:scale-110 transition cursor-pointer shadow-sm"
+                            aria-label="Teal"></button>
                     </div>
                 </div>
             </div>
@@ -1531,20 +1667,24 @@
             <div class="grid grid-cols-2 gap-3 p-3 bg-theme-card border border-theme rounded-xl text-xs font-mono">
                 <div>
                     <span class="text-[9px] uppercase tracking-wider text-theme-muted block font-bold">Kode HEX</span>
-                    <input type="text" id="accent-hex-input" value="#1DB954" onchange="setAccentColor(this.value)" class="bg-transparent border-b border-theme text-theme-main font-bold text-xs uppercase focus:outline-none w-full mt-0.5">
+                    <input type="text" id="accent-hex-input" value="#1DB954" onchange="setAccentColor(this.value)"
+                        class="bg-transparent border-b border-theme text-theme-main font-bold text-xs uppercase focus:outline-none w-full mt-0.5">
                 </div>
                 <div>
                     <span class="text-[9px] uppercase tracking-wider text-theme-muted block font-bold">Format RGB</span>
-                    <span id="accent-rgb-val" class="text-theme-main font-bold text-xs mt-1 block">rgb(29, 185, 84)</span>
+                    <span id="accent-rgb-val" class="text-theme-main font-bold text-xs mt-1 block">rgb(29, 185,
+                        84)</span>
                 </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex justify-between items-center pt-2">
-                <button onclick="resetAccentColor()" class="px-3.5 py-1.5 rounded-full border border-theme text-theme-muted hover:text-theme-main hover:border-red-400/50 text-xs font-mono transition cursor-pointer">
+                <button onclick="resetAccentColor()"
+                    class="px-3.5 py-1.5 rounded-full border border-theme text-theme-muted hover:text-theme-main hover:border-red-400/50 text-xs font-mono transition cursor-pointer">
                     <i class="fa-solid fa-rotate-left text-[10px] mr-1"></i> RESET DEFAULT
                 </button>
-                <button onclick="closeColorCustomizer()" class="px-5 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition cursor-pointer shadow-md">
+                <button onclick="closeColorCustomizer()"
+                    class="px-5 py-1.5 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-bold text-xs hover:scale-105 transition cursor-pointer shadow-md">
                     Selesai
                 </button>
             </div>
@@ -1594,7 +1734,7 @@
     <!-- JAVASCRIPT: SPA, THEME SWITCHER & AVATAR MANAGEMENT LOGIC -->
     <script>
         // Default avatar seed
-        const DEFAULT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=KenWeasley";
+        const DEFAULT_AVATAR = "WhatsApp Image 2026-08-13 at 3.28.12 PM.jpeg";
 
         // Data Tugas/Proyek
         const dataTugas = {
